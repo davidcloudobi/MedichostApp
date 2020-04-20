@@ -1,0 +1,138 @@
+.grid-container {
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+}
+.Quick-stats {
+  padding-top: 30px;
+  padding-left: 40px;
+  font-weight: bold;
+}
+
+.dashboard-card2 {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  right: 15px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+
+  margin: 20px;
+}
+
+#name {
+  font-weight: bold;
+}
+.m-card-flex {
+  display: flex;
+  justify-content: start;
+
+  margin-left: 0px;
+}
+
+.pie-chart-grid {
+  height: 50%;
+  width: 435px;
+}
+.home-chart {
+  display: flex;
+  flex-direction: row;
+}
+.Upcoming-Patients,
+.visitor-chat,
+.Available-Doctors,
+.income-expenses {
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+.title {
+  font-size: small;
+}
+/* .chat-grids {
+  display: grid;
+  grid-template-columns: 450px;
+  border: 1px solid red;
+} */
+
+:host >>> .mat-figure {
+  justify-content: start !important;
+  display: inline !important;
+}
+
+:host >>> .mat-grid-list {
+  padding-bottom: 13% !important;
+}
+
+/* .test {
+  border: 3px solid yellow;
+  justify-content: start;
+} */
+/* .mat-grid-tile .mat-figure {
+   justify-content: flex-start !important ;
+   align-items: flex-start !important;
+} */
+.g-one {
+  height: 100%;
+}
+.g-two {
+  border: 1px solid royalblue;
+}
+.number {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  box-sizing: border-box;
+  height: 150px;
+}
+.container {
+  height: 480px;
+}
+
+.mat-icon-notification {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+.d-one {
+  display: flex;
+  justify-content: space-between;
+}
+.d-one p,
+h3 {
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.d-two {
+  display: flex;
+  justify-content: space-between;
+}
+.d-two p {
+  padding-left: 20px;
+}
+
+.btn-radius {
+  border-radius: 50%;
+}
+.d-three {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.call-patient {
+  margin-left: 20px;
+}

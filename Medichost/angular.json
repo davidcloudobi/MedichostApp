@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "Medichost"
+  "defaultProject": "Medichost",
+  "cli": {
+    "analytics": "acd10c16-d8a4-491f-9fde-2d6553cd3c63"
+  }
 }
