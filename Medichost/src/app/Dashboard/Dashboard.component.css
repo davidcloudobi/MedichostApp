@@ -5,6 +5,5 @@ mat-sidenav {
 .sideBarNav
 {
   background-color: cornflowerblue;
-  color: white;
-  font-weight: bolder;
+  font-weight: bold;
 }

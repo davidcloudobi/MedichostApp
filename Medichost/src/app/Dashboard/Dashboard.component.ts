@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Schedules, HourlySchedule, sideBarNavs, sideNav, actions, docActions} from './helpers/doctorAction'
+
 
 @Component({
   selector: 'app-Dashboard',
@@ -8,14 +10,24 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   constructor() { }
-  events: string[] = [];
-  list:any[] = [];
-  opened: boolean;
-  panelOpenState = false;
 
-  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
+
+  sideNav: sideNav[] = sideBarNavs; // SideBar Options
+  doctorActions: actions[] = docActions; // Doctor Options
+
+  displayedColumns = ['time', '15', '30', '45', '60']; // Schedule Columns
+  dataSource:HourlySchedule[] = Schedules; // Schedule
+
+  //Calender Activity
+  selectedDate: any;
+  onSelect(event)
+  {
+    this.selectedDate= event;
+  }
+
 
   ngOnInit() {
   }
 
 }
+
