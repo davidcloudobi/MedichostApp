@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.1/fullcalendar.min.css">
+<div class="grid-container">
+  
+<mat-grid-list cols="1" rowHeight="100px">
+  <h1 class="mat-h1"><span><b>{{Greetings}}</b></span>, <span><b>{{Name}}</b></span></h1>
+  <form name="search-form">  
+    <input type="search" name="search" [(ngModel)] = "Search" class="form-control w-25" placeholder="Search" >
+    </form>
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon>notifications_active</mat-icon>
+      <span class="margin-left"><mat-icon svgIcon="{{Avatar}}"></mat-icon></span>
+      <small class="margin-left">{{Name}}</small>
+    </mat-card-title>
+  </mat-card-header>
+</mat-card>
+  </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="4" rowHeight="150px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title >
+          <fa-icon class="display-4 "style="color:{{card.style}};" [icon]="card.title"></fa-icon>    
+          </mat-card-title>
+          <div class="text-center border-left p-4">
+            <p >{{card.name}}</p>
+            <p><b>{{card.count}}</b></p>
+          </div>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <!-- <ngx-fullcalendar defaultView="month" [events]="events" [options]="options"></ngx-fullcalendar> -->
+  <app-root></app-root>
+  <!-- <nb-calendar [(date)]="date"></nb-calendar> -->
+<!-- <nb-calendar [date]="date" (dateChange)="handleDateChange($event)"></nb-calendar> -->
+  </div>
+

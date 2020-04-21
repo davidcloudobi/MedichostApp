@@ -1,0 +1,142 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav mode="side" opened class="side-nav" >
+   <mat-nav-list>
+    <li mat-list-item class="header"><mat-icon svgIcon="medic"></mat-icon> Medico</li>
+    <mat-toolbar color="primary" style="height: 2em;">
+      <span class="mat-body m-1" ><mat-icon>dashboard</mat-icon></span><span class="mat-body-1"> Dashboard</span>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" >  <fa-icon [icon]="faStethoscope"></fa-icon></span><span class="mat-body-1 ">Appointment</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu"class="drop">
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faCalendarAlt"></fa-icon>  </span><span class="mat-body-1">Schedules</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu" class="drop-1">
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faCut"></fa-icon> </span><span class="mat-body-1">Operations</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu" class="drop-2">
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faFlask"></fa-icon> </span><span class="mat-body-1">Lab reports</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu" class="drop-3">
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faPills"></fa-icon>  </span><span class="mat-body-1">Medicines</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu" class="drop-1">
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" >  <fa-icon [icon]="faCommentAlt"></fa-icon> </span><span class="mat-body-1">Messages</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu" class="drop-1">
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faUserFriends"></fa-icon>  </span><span class="mat-body-1">Patients</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu" class="drop-5">
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faUsers"></fa-icon>  </span><span class="mat-body-1">Staffs</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu" class="drop-6">
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faFilePrescription"></fa-icon>  </span><span class="mat-body-1">Prescriptions</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu" class="drop">
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faHistory"></fa-icon>   </span><span class="mat-body-1" >Case History</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu" class="drop-7">
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faFileInvoice"></fa-icon>    </span><span class="mat-body-1">Invoice</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu"  class="drop-8">
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faEnvelope"></fa-icon>   </span> <span class="mat-body-1"> <a href="#">Emails</a> </span><span class="email">1</span>
+     
+    </mat-toolbar>
+    <mat-toolbar class="side-nav" style="height: 2em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faCommentDots"></fa-icon>   </span> <span class="mat-body-1"> <a href="#">Send Sms</a></span> 
+     
+    </mat-toolbar>
+  
+    <mat-toolbar class="side-nav" style="margin-top: 1em;">
+      <span class="mat-body m-1" ><fa-icon [icon]="faQuestionCircle"></fa-icon>    </span><span class="mat-body-1">Help</span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu"class="drop-9" >
+        <fa-icon [icon]="faSortDown"></fa-icon>
+      </button>
+    </mat-toolbar>
+   </mat-nav-list>
+  </mat-sidenav>
+    <mat-sidenav-content>
+      <app-dashboard-component></app-dashboard-component>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
