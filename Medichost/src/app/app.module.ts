@@ -28,7 +28,13 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { LineChartComponent } from "./shared/widget/line-chart/line-chart.component";
 import { HighchartsChartModule } from "highcharts-angular";
-import { PieChartComponent } from './shared/widget/pie-chart/pie-chart.component';
+import { PieChartComponent } from "./shared/widget/pie-chart/pie-chart.component";
+import { TableComponent } from "./Appointment/appointments/table/table.component";
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSortModule } from "@angular/material/sort";
+import { DialogTemplateComponent } from "./Appointment/appointments/table/dialog-template/dialog-template.component";
+import { DialogService } from './Appointment/appointments/table/dialog.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +53,10 @@ import { PieChartComponent } from './shared/widget/pie-chart/pie-chart.component
     HomepageComponent,
     LineChartComponent,
     PieChartComponent,
+    TableComponent,
+    DialogTemplateComponent,
   ],
+  entryComponents: [DialogTemplateComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -63,8 +72,11 @@ import { PieChartComponent } from './shared/widget/pie-chart/pie-chart.component
     MatFormFieldModule,
     MatInputModule,
     HighchartsChartModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
-  providers: [],
+  providers: [DialogService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
