@@ -44,6 +44,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { MyScheduleComponent } from './doctordashborad/dashboardlayout/scheduler.component';
+import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { MyScheduleComponent } from './doctordashborad/dashboardlayout/scheduler
     FormsModule,
     MatToolbarModule,
     HttpClientModule,
-    ScheduleModule
+    ScheduleModule,
+    CalendarModule
   ],
 
   providers: [DialogService, DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService],
