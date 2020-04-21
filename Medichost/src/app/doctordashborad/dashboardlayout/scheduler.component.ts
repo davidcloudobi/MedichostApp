@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { EventSettingsModel } from '@syncfusion/ej2-angular-schedule';
 @Component({
     selector:"app-schedule",
-    template: `<ejs-schedule width='70%' height='550px' [selectedDate]='selectedDate'
+    template: `<ejs-schedule width='96%' height='550px' [selectedDate]='selectedDate'
     [eventSettings]='eventSettings'></ejs-schedule>`
 })
         
