@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { DayService, WeekService, WorkWeekService, MonthService, AgendaService ,MonthAgendaService,TimelineViewsService,TimelineMonthService} from '@syncfusion/ej2-angular-schedule';
 
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -35,8 +36,21 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { DialogTemplateComponent } from "./Appointment/appointments/table/dialog-template/dialog-template.component";
 import { DialogService } from './Appointment/appointments/table/dialog.service';
+
 import { MedicoPatientsComponent } from './Appointment/medico-patients/medico-patients.component';
 import { PatientsComponent } from './Appointment/patients/patients.component';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DashboardComponentComponent } from './doctordashborad/dashboard-component.component';
+import { FormsModule } from '@angular/forms';
+import { DoctorComponent } from "./doctordashborad/dashboardlayout/dashboard.doctor.component"
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { MyScheduleComponent } from './doctordashborad/dashboardlayout/scheduler.component';
+import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
+import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.component';
+
 
 @NgModule({
   declarations: [
@@ -57,8 +71,15 @@ import { PatientsComponent } from './Appointment/patients/patients.component';
     PieChartComponent,
     TableComponent,
     DialogTemplateComponent,
+
     MedicoPatientsComponent,
     PatientsComponent,
+=======
+    DashboardComponentComponent,
+    DoctorComponent,
+    MyScheduleComponent,
+    MyCalenderComponent 
+
   ],
   entryComponents: [DialogTemplateComponent],
   imports: [
@@ -79,8 +100,15 @@ import { PatientsComponent } from './Appointment/patients/patients.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    FontAwesomeModule,
+    FormsModule,
+    MatToolbarModule,
+    HttpClientModule,
+    ScheduleModule,
+    CalendarModule
   ],
-  providers: [DialogService],
+
+  providers: [DialogService, DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
