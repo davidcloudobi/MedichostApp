@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { DayService, WeekService, WorkWeekService, MonthService, AgendaService ,MonthAgendaService,TimelineViewsService,TimelineMonthService} from '@syncfusion/ej2-angular-schedule';
 
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -40,6 +41,9 @@ import { DashboardComponentComponent } from './doctordashborad/dashboard-compone
 import { FormsModule } from '@angular/forms';
 import { DoctorComponent } from "./doctordashborad/dashboardlayout/dashboard.doctor.component"
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { HttpClientModule } from '@angular/common/http';
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { MyScheduleComponent } from './doctordashborad/dashboardlayout/scheduler.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     TableComponent,
     DialogTemplateComponent,
     DashboardComponentComponent,
-    DoctorComponent 
+    DoctorComponent,
+    MyScheduleComponent
   ],
   entryComponents: [DialogTemplateComponent],
   imports: [
@@ -84,9 +89,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatSortModule,
     FontAwesomeModule,
     FormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule,
+    ScheduleModule
   ],
-  providers: [DialogService],
+
+  providers: [DialogService, DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

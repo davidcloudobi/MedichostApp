@@ -5,6 +5,7 @@ import { faCoffee, faStethoscope, faPills,faQuestionCircle,faCalendarAlt, faSort
 @Component({
   selector: 'app-doctordashboard',
   templateUrl: './dashboard.component.html',
+  
 
 
   
