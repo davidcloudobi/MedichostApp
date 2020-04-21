@@ -8,6 +8,7 @@ import { SidebarComponent } from "./Appointment/sidebar/sidebar.component";
 import { HomeComponent } from "./Appointment/home/home.component";
 import { AppointmentsComponent } from "./Appointment/appointments/appointments.component";
 import { HomepageComponent } from "./Appointment/homepage/homepage.component";
+import { DoctorComponent } from './doctordashborad/dashboardlayout/dashboard.doctor.component';
 const routes: Routes = [
   {
     path: "",
@@ -16,6 +17,16 @@ const routes: Routes = [
       {
         path: "dashboard",
         component: DashboardComponent,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    component: DefaultComponent,
+    children: [
+      {
+        path: "doctor",
+        component: DoctorComponent ,
       },
     ],
   },

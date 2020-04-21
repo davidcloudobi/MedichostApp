@@ -35,6 +35,11 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { DialogTemplateComponent } from "./Appointment/appointments/table/dialog-template/dialog-template.component";
 import { DialogService } from './Appointment/appointments/table/dialog.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DashboardComponentComponent } from './doctordashborad/dashboard-component.component';
+import { FormsModule } from '@angular/forms';
+import { DoctorComponent } from "./doctordashborad/dashboardlayout/dashboard.doctor.component"
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -55,6 +60,8 @@ import { DialogService } from './Appointment/appointments/table/dialog.service';
     PieChartComponent,
     TableComponent,
     DialogTemplateComponent,
+    DashboardComponentComponent,
+    DoctorComponent 
   ],
   entryComponents: [DialogTemplateComponent],
   imports: [
@@ -75,6 +82,9 @@ import { DialogService } from './Appointment/appointments/table/dialog.service';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    FontAwesomeModule,
+    FormsModule,
+    MatToolbarModule
   ],
   providers: [DialogService],
   bootstrap: [AppComponent],
