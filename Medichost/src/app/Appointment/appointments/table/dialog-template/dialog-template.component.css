@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.main {
+  width: 500px;
+  height: 460px;
+  padding: 15px;
+}
+.miniFlex {
+  display: flex;
+}
+.miniFlexMat-icon {
+  padding-left: 40px;
+}
+#miniFlexBtn {
+  border-radius: 30px;
+  height: 30px;
+  width: 120%;
+}
+.detailOne {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detailTwo {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+#callbtn {
+  background-color: blue;
+  color: white;
+  border-radius: 20px;
+  padding: 5px;
+}

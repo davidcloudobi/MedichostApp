@@ -1,0 +1,36 @@
+import { NgModule } from "@angular/core";
+
+import { Routes, RouterModule } from "@angular/router";
+import { DashboardComponent } from "./modules/dashboard/dashboard.component";
+import { DefaultComponent } from "./layouts/default/default.component";
+import { AppointmentDefaultComponent } from "./Appointment/appointment-default/appointment-default.component";
+import { SidebarComponent } from "./Appointment/sidebar/sidebar.component";
+import { HomeComponent } from "./Appointment/home/home.component";
+import { AppointmentsComponent } from "./Appointment/appointments/appointments.component";
+import { HomepageComponent } from "./Appointment/homepage/homepage.component";
+const routes: Routes = [
+  {
+    path: "",
+    component: DefaultComponent,
+    children: [
+      {
+        path: "dashboard",
+        component: DashboardComponent,
+      },
+    ],
+  },
+  {
+    path: "appointment",
+    component: AppointmentDefaultComponent,
+    children: [
+      { path: "", component: HomepageComponent },
+      { path: "appointments", component: AppointmentsComponent },
+    ],
+  },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
