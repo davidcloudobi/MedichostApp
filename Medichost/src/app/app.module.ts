@@ -35,6 +35,8 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { DialogTemplateComponent } from "./Appointment/appointments/table/dialog-template/dialog-template.component";
 import { DialogService } from './Appointment/appointments/table/dialog.service';
+import { MedicoPatientsComponent } from './Appointment/medico-patients/medico-patients.component';
+import { PatientsComponent } from './Appointment/patients/patients.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { DialogService } from './Appointment/appointments/table/dialog.service';
     PieChartComponent,
     TableComponent,
     DialogTemplateComponent,
+    MedicoPatientsComponent,
+    PatientsComponent,
   ],
   entryComponents: [DialogTemplateComponent],
   imports: [

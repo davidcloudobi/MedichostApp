@@ -8,6 +8,8 @@ import { SidebarComponent } from "./Appointment/sidebar/sidebar.component";
 import { HomeComponent } from "./Appointment/home/home.component";
 import { AppointmentsComponent } from "./Appointment/appointments/appointments.component";
 import { HomepageComponent } from "./Appointment/homepage/homepage.component";
+import { MedicoPatientsComponent } from "./Appointment/medico-patients/medico-patients.component";
+import { PatientsComponent } from "./Appointment/patients/patients.component";
 const routes: Routes = [
   {
     path: "",
@@ -25,6 +27,7 @@ const routes: Routes = [
     children: [
       { path: "", component: HomepageComponent },
       { path: "appointments", component: AppointmentsComponent },
+      { path: "patients", component: PatientsComponent },
     ],
   },
 ];
