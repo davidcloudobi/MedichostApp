@@ -36,6 +36,10 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { DialogTemplateComponent } from "./Appointment/appointments/table/dialog-template/dialog-template.component";
 import { DialogService } from './Appointment/appointments/table/dialog.service';
+
+import { MedicoPatientsComponent } from './Appointment/medico-patients/medico-patients.component';
+import { PatientsComponent } from './Appointment/patients/patients.component';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DashboardComponentComponent } from './doctordashborad/dashboard-component.component';
 import { FormsModule } from '@angular/forms';
@@ -46,6 +50,7 @@ import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { MyScheduleComponent } from './doctordashborad/dashboardlayout/scheduler.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.component';
+
 
 @NgModule({
   declarations: [
@@ -66,10 +71,15 @@ import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.
     PieChartComponent,
     TableComponent,
     DialogTemplateComponent,
+
+    MedicoPatientsComponent,
+    PatientsComponent,
+=======
     DashboardComponentComponent,
     DoctorComponent,
     MyScheduleComponent,
     MyCalenderComponent 
+
   ],
   entryComponents: [DialogTemplateComponent],
   imports: [

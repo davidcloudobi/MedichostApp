@@ -1,0 +1,84 @@
+<div class="grid-container">
+  <!-- <h1 class="mat-h1">Dashboard</h1> -->
+  <div class="mat-icon-notification">
+    <span
+      matBadge="1"
+      matBadgePosition="above after"
+      matBadgeSize="small"
+      matBadgeColor="warn"
+    >
+      <mat-icon style="font-size: 25px;">notification_important</mat-icon>
+    </span>
+  </div>
+  <div class="top">
+    <div>
+      <h3>Medico Patients</h3>
+      <p>All the active applicants information are below</p>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" class="addButton">
+        <mat-icon matPrefix>add_circle_outline</mat-icon>Add individual
+        Appointment
+      </button>
+    </div>
+  </div>
+  <div class="search-one">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-icon matPrefix>search</mat-icon>
+        <mat-label>Search ID, Name, Gender</mat-label>
+        <input matInput placeholder="Placeholder" />
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+    </div>
+    <div class="search-two">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Filter by department</mat-label>
+          <mat-select>
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Filter by doctor</mat-label>
+          <mat-select>
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <mat-grid-list cols="4" rowHeight="250px">
+    <mat-grid-tile
+      *ngFor="let card of cards | async"
+      [colspan]="card.cols"
+      [rowspan]="card.rows"
+    >
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Male <span id="age">25</span></mat-card-subtitle>
+          <span class="id">12345</span>
+        </mat-card-header>
+
+        <mat-card-content class="card-content">
+          <div>
+            <p>Department</p>
+            <h4>Neurosurgery</h4>
+          </div>
+          <div>
+            <p>Doctor</p>
+            <h4>John Dow</h4>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-stroked-button class="btn">DETAILS</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
