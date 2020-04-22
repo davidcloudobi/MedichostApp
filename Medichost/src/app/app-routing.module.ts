@@ -9,6 +9,7 @@ import { HomeComponent } from "./Appointment/home/home.component";
 import { AppointmentsComponent } from "./Appointment/appointments/appointments.component";
 import { HomepageComponent } from "./Appointment/homepage/homepage.component";
 import { DoctorComponent } from './doctordashborad/dashboardlayout/dashboard.doctor.component';
+import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   {
     path: "",
@@ -38,6 +39,10 @@ const routes: Routes = [
       { path: "appointments", component: AppointmentsComponent },
     ],
   },
+  {
+    path:"login",
+    component:LoginComponent
+  }
 ];
 
 @NgModule({
