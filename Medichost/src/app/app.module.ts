@@ -56,7 +56,6 @@ import { SidebarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
