@@ -9,7 +9,7 @@ import { HomeComponent } from "./Appointment/home/home.component";
 import { AppointmentsComponent } from "./Appointment/appointments/appointments.component";
 import { HomepageComponent } from "./Appointment/homepage/homepage.component";
 import { DoctorComponent } from './doctordashborad/dashboardlayout/dashboard.doctor.component';
-import { PatientnavbarComponent } from './patients/patientnavbar/patientnavbar.component';
+import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
 const routes: Routes = [
   {
     path: "",
