@@ -50,9 +50,11 @@ import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { MyScheduleComponent } from './doctordashborad/dashboardlayout/scheduler.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.component';
-import { PatientnavbarComponent } from './patients/patientnavbar/patientnavbar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { SidebarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
 
 
 @NgModule({
@@ -110,7 +112,10 @@ import { MatListModule } from '@angular/material/list';
     ScheduleModule,
     CalendarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    SidebarModule,
+    MenuModule,
+    ListViewModule
   ],
 
   providers: [DialogService, DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService],
