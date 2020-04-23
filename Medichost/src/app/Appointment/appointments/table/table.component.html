@@ -65,8 +65,12 @@
       <div>
         <mat-form-field appearance="fill">
           <mat-label>Filter by department</mat-label>
-          <mat-select>
-            <mat-option value="option">Option</mat-option>
+          <mat-select (selectionChange)="applyFilter($event.value)">
+            <mat-option
+              *ngFor="let value of hospitalData"
+              [value]="value.department"
+              >{{ value.department }}</mat-option
+            >
           </mat-select>
         </mat-form-field>
       </div>
@@ -74,8 +78,12 @@
       <div>
         <mat-form-field appearance="fill">
           <mat-label>Filter by doctor</mat-label>
-          <mat-select>
-            <mat-option value="option">Option</mat-option>
+          <mat-select (selectionChange)="applyFilter($event.value)">
+            <mat-option
+              *ngFor="let value of hospitalData"
+              [value]="value.doctor"
+              >{{ value.doctor }}</mat-option
+            >
           </mat-select>
         </mat-form-field>
       </div>
