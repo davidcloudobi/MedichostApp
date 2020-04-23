@@ -36,6 +36,10 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
 import { DialogTemplateComponent } from "./Appointment/appointments/table/dialog-template/dialog-template.component";
 import { DialogService } from './Appointment/appointments/table/dialog.service';
+
+import { MedicoPatientsComponent } from './Appointment/medico-patients/medico-patients.component';
+import { PatientsComponent } from './Appointment/patients/patients.component';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DashboardComponentComponent } from './doctordashborad/dashboard-component.component';
 import { FormsModule } from '@angular/forms';
@@ -51,6 +55,11 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginmodalComponent } from './loginmodal/loginmodal.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { SignupmodalComponent } from './signupmodal/signupmodal.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { SidebarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
+import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +80,10 @@ import { SignupmodalComponent } from './signupmodal/signupmodal.component';
     PieChartComponent,
     TableComponent,
     DialogTemplateComponent,
+
+    MedicoPatientsComponent,
+    PatientsComponent,
+
     DashboardComponentComponent,
     DoctorComponent,
     MyScheduleComponent,
@@ -80,6 +93,8 @@ import { SignupmodalComponent } from './signupmodal/signupmodal.component';
     LoginmodalComponent,
     ForgotpasswordComponent,
     SignupmodalComponent 
+    MyCalenderComponent ,
+    PatientnavbarComponent 
   ],
   entryComponents: [DialogTemplateComponent],
   imports: [
@@ -105,7 +120,12 @@ import { SignupmodalComponent } from './signupmodal/signupmodal.component';
     MatToolbarModule,
     HttpClientModule,
     ScheduleModule,
-    CalendarModule
+    CalendarModule,
+    MatSidenavModule,
+    MatListModule,
+    SidebarModule,
+    MenuModule,
+    ListViewModule
   ],
 
   providers: [DialogService, DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService],
