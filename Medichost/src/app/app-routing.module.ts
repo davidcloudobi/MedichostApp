@@ -10,6 +10,8 @@ import { AppointmentsComponent } from "./Appointment/appointments/appointments.c
 import { HomepageComponent } from "./Appointment/homepage/homepage.component";
 import { DoctorComponent } from './doctordashborad/dashboardlayout/dashboard.doctor.component';
 import { LoginComponent } from './login/login.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { SignupComponent } from './signup/signup.component';
 const routes: Routes = [
   {
     path: "",
@@ -42,6 +44,14 @@ const routes: Routes = [
   {
     path:"login",
     component:LoginComponent
+  },
+  {
+    path:"forgetpassword",
+    component:ForgotpasswordComponent
+  },
+  {
+    path:"signup",
+    component:SignupComponent
   }
 ];
 

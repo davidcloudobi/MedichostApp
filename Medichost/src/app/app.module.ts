@@ -48,6 +48,9 @@ import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginmodalComponent } from './loginmodal/loginmodal.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { SignupmodalComponent } from './signupmodal/signupmodal.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +76,10 @@ import { SignupComponent } from './signup/signup.component';
     MyScheduleComponent,
     MyCalenderComponent,
     LoginComponent,
-    SignupComponent 
+    SignupComponent,
+    LoginmodalComponent,
+    ForgotpasswordComponent,
+    SignupmodalComponent 
   ],
   entryComponents: [DialogTemplateComponent],
   imports: [

@@ -9,8 +9,10 @@ body {
   padding-top: 7px;
   padding-bottom: 8px; }
   .brand-wrapper .logo {
-    padding-left: 150px;
-    height: 40px; }
+    padding-left: 30%;
+    padding-right: 30%;
+    height: 40px; 
+  }
 
 .login-section-wrapper {
   display: -webkit-box;
@@ -18,7 +20,7 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
-  padding: 68px 100px;
+   padding-top: 2%; 
   background-color: #fff; }
   @media (max-width: 991px) {
     .login-section-wrapper {
@@ -35,8 +37,8 @@ body {
   max-width: 100%;
   padding-top: 24px;
   padding-bottom: 24px; 
-  padding-left:50px;
-  padding-right: 50px;
+  padding-left:15%;
+  padding-right: 15%;
 }
   
   @media (max-width: 575px) {
@@ -112,7 +114,14 @@ body {
 .value {
 background:  linear-gradient(89deg, #2d2f48 0%, rgba(21, 94, 189, 0.651) 12%, #0d39b373 100%),url("../images/login.jpg") no-repeat;
 background-size: cover;
- 
+height: 100%;
+overflow: hidden;
 }
+
+.vale {
+  background:  linear-gradient(89deg, #2d2f48 0%, rgba(21, 94, 189, 0.651) 12%, #0d39b373 100%),url("../images/login.jpg") no-repeat;
+  background-size: cover;
+  height: 100%;
+  }
 
 /*# sourceMappingURL=login.css.map */
