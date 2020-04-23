@@ -74,7 +74,10 @@ import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.
 
     MedicoPatientsComponent,
     PatientsComponent,
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5bb77bb0d9e48345c0cf6ae3b401b35efdbc2520
     DashboardComponentComponent,
     DoctorComponent,
     MyScheduleComponent,

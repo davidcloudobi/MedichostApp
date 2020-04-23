@@ -33,7 +33,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: "Helium",
     gender: "Female",
     department: "He",
-    doctor: "David",
+    doctor: "Selena",
     requestedDate: "12/3/45",
     time: "Morning",
   },
@@ -42,7 +42,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: "Lithium",
     gender: "Male",
     department: "Li",
-    doctor: "David",
+    doctor: "Talior",
     requestedDate: "12/3/45",
     time: "Morning",
   },
@@ -51,7 +51,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: "Beryllium",
     gender: "Female",
     department: "Be",
-    doctor: "David",
+    doctor: "Joeline",
     requestedDate: "12/3/45",
     time: "Morning",
   },
@@ -60,7 +60,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: "Boron",
     gender: "Male",
     department: "B",
-    doctor: "David",
+    doctor: "Will",
     requestedDate: "12/3/45",
     time: "Morning",
   },
@@ -69,7 +69,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: "Carbon",
     gender: "Female",
     department: "C",
-    doctor: "David",
+    doctor: "Josh",
     requestedDate: "12/3/45",
     time: "Morning",
   },
@@ -78,7 +78,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: "Nitrogen",
     gender: "Male",
     department: "N",
-    doctor: "David",
+    doctor: "Nathane",
     requestedDate: "12/3/45",
     time: "Morning",
   },
@@ -87,7 +87,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: "Oxygen",
     gender: "Female",
     department: "O",
-    doctor: "David",
+    doctor: "Snow",
     requestedDate: "12/3/45",
     time: "Morning",
   },
@@ -96,7 +96,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: "Fluorine",
     gender: "Male",
     department: "F",
-    doctor: "David",
+    doctor: "Steve",
     requestedDate: "12/3/45",
     time: "Morning",
   },
@@ -105,7 +105,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: "Neon",
     gender: "Femlae",
     department: "Ne",
-    doctor: "David",
+    doctor: "Phlip",
     requestedDate: "12/3/45",
     time: "Morning",
   },
@@ -114,7 +114,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: "Neon",
     gender: "Femlae",
     department: "Ne",
-    doctor: "David",
+    doctor: "James",
     requestedDate: "12/3/45",
     time: "Morning",
   },
@@ -123,7 +123,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     name: "Neon",
     gender: "Femlae",
     department: "Ne",
-    doctor: "David",
+    doctor: "John",
     requestedDate: "12/3/45",
     time: "Morning",
   },
@@ -137,6 +137,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class TableComponent implements OnInit, AfterViewInit {
   // displayedColumns: string[] = ["id", "name", "gender", "department"];
   //dataSource = ELEMENT_DATA;
+  hospitalData = ELEMENT_DATA;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -164,20 +165,23 @@ export class TableComponent implements OnInit, AfterViewInit {
     //  this.dataSource.sort = this.sort;
     // this.dataSource.paginator = this.paginator;
     // this.table.dataSource = this.dataSource;
+    // ELEMENT_DATA.forEach((element) => {
+    //   this.departments.push(element.department);
+    // });
   }
 
   logData(row: PeriodicElement) {
     this.dialogService.onDialog(row);
     this.dialog.open(DialogTemplateComponent);
-    console.log(row.name);
+    // console.log(row.name);
   }
 
   onCancel() {
-    console.log("dfgh");
+    // console.log("dfgh");
   }
 
   onDetail() {
-    console.log("dfgh");
+    //console.log("dfgh");
   }
 
   // AfterViewInit
@@ -193,6 +197,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   //}
 
   ngAfterViewInit() {
+    console.log(this.sort);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     // this.table.dataSource = this.dataSource;
