@@ -50,6 +50,9 @@ import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { MyScheduleComponent } from './doctordashborad/dashboardlayout/scheduler.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.component';
+import { PatientnavbarComponent } from './patients/patientnavbar/patientnavbar.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -74,15 +77,12 @@ import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.
 
     MedicoPatientsComponent,
     PatientsComponent,
-<<<<<<< HEAD
 
-=======
->>>>>>> 5bb77bb0d9e48345c0cf6ae3b401b35efdbc2520
     DashboardComponentComponent,
     DoctorComponent,
     MyScheduleComponent,
-    MyCalenderComponent 
-
+    MyCalenderComponent ,
+    PatientnavbarComponent 
   ],
   entryComponents: [DialogTemplateComponent],
   imports: [
@@ -108,7 +108,9 @@ import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.
     MatToolbarModule,
     HttpClientModule,
     ScheduleModule,
-    CalendarModule
+    CalendarModule,
+    MatSidenavModule,
+    MatListModule
   ],
 
   providers: [DialogService, DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService],
