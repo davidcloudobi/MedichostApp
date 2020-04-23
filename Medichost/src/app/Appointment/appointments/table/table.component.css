@@ -25,7 +25,9 @@ mat-header-cell {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 50px;
+  width: 97%;
+  padding-left: 25px;
 }
 
 .mat-icon-notification {
@@ -41,6 +43,7 @@ mat-header-cell {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-top: 105px;
 }
 
 .search-two {

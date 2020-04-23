@@ -27,7 +27,11 @@
       <mat-form-field appearance="outline">
         <mat-icon matPrefix>search</mat-icon>
         <mat-label>Search ID, Name, Gender</mat-label>
-        <input matInput placeholder="Placeholder" />
+        <input
+          matInput
+          (keyup)="applyFilter($event.target.value)"
+          placeholder="Filter"
+        />
         <!-- <mat-hint>Hint</mat-hint> -->
       </mat-form-field>
     </div>
@@ -35,8 +39,10 @@
       <div>
         <mat-form-field appearance="fill">
           <mat-label>Filter by department</mat-label>
-          <mat-select>
-            <mat-option value="option">Option</mat-option>
+          <mat-select (selectionChange)="applyFilter($event.value)">
+            <mat-option *ngFor="let user of users" [value]="user.department">{{
+              user.department
+            }}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -44,14 +50,16 @@
       <div>
         <mat-form-field appearance="fill">
           <mat-label>Filter by doctor</mat-label>
-          <mat-select>
-            <mat-option value="option">Option</mat-option>
+          <mat-select (selectionChange)="applyFilter($event.value)">
+            <mat-option *ngFor="let user of users" [value]="user.doctor">{{
+              user.doctor
+            }}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
     </div>
   </div>
-  <mat-grid-list cols="4" rowHeight="250px">
+  <!-- <mat-grid-list cols="4" rowHeight="250px">
     <mat-grid-tile
       *ngFor="let card of cards | async"
       [colspan]="card.cols"
@@ -80,5 +88,65 @@
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
-  </mat-grid-list>
+  </mat-grid-list> -->
+
+  <!-- ##################################################### -->
+  <div class="container-item">
+    <mat-card class="example-card">
+      <!-- <mat-card-header>
+        <mat-form-field class="example-full-width">
+          <input
+            matInput
+            (keyup)="applyFilter($event.target.value)"
+            placeholder="Filter"
+          />
+        </mat-form-field>
+      </mat-card-header> -->
+
+      <mat-card-content class="grid">
+        <mat-card
+          class="example-card-two"
+          *ngFor="let user of this.dataSource.filteredData"
+        >
+          <!-- <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{ user }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions> -->
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ user.name }}</mat-card-title>
+            <mat-card-subtitle
+              >{{ user.gender }}
+              <span id="age">{{ user.id }}</span></mat-card-subtitle
+            >
+            <span class="id">{{ user.requestedDate }}</span>
+          </mat-card-header>
+
+          <mat-card-content class="card-content">
+            <div>
+              <p>Department</p>
+              <h4>{{ user.department }}</h4>
+            </div>
+            <div>
+              <p>Doctor</p>
+              <h4>{{ user.doctor }}</h4>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-stroked-button class="btn">DETAILS</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
