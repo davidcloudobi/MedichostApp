@@ -50,6 +50,11 @@ import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { MyScheduleComponent } from './doctordashborad/dashboardlayout/scheduler.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginmodalComponent } from './loginmodal/loginmodal.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { SignupmodalComponent } from './signupmodal/signupmodal.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { SidebarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
@@ -82,6 +87,12 @@ import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component'
     DashboardComponentComponent,
     DoctorComponent,
     MyScheduleComponent,
+    MyCalenderComponent,
+    LoginComponent,
+    SignupComponent,
+    LoginmodalComponent,
+    ForgotpasswordComponent,
+    SignupmodalComponent, 
     MyCalenderComponent ,
     PatientnavbarComponent 
   ],
