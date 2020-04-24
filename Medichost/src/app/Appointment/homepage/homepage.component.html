@@ -1,0 +1,277 @@
+<div class="grid-container">
+  <!-- <h1 class="mat-h1">Dashboard</h1> -->
+
+  <mat-grid-list cols="6" columnHeight="250px">
+    <div class="mat-icon-notification">
+      <span
+        matBadge="1"
+        matBadgePosition="above after"
+        matBadgeSize="small"
+        matBadgeColor="warn"
+        ><mat-icon style="font-size: 25px;"
+          >notification_important</mat-icon
+        ></span
+      >
+    </div>
+    <!-- <mat-icon class="mat-icon-notification">notification_important</mat-icon> -->
+    <p class="Quick-stats">Quick stats</p>
+    <mat-grid-tile
+      *ngFor="let stat of stats"
+      [colspan]="stat.cols"
+      [rowspan]="stat.rows"
+    >
+      <mat-card class="dashboard-card2">
+        <mat-card-header>
+          <mat-card-title>
+            <span class="title">{{ stat.title }}</span>
+            <!-- <button
+              mat-icon-button
+              class="more-button"
+              [matMenuTriggerFor]="menu"
+              aria-label="Toggle menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button> -->
+            <!-- <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu> -->
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <h1>{{ stat.value }}</h1>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <!-- ######################################################################################### -->
+  <!-- <div class="chat-grids">
+    <div class="g-one">
+      <cdk-virtual-scroll-viewport itemSize="100" class="container">
+        <mat-card>
+          <div *cdkVirtualFor="let number of numbers" class="number">
+            <div class="d-one">
+              <h3>{{ stats[0].title }}</h3>
+              <p>{{ stats[0].title }}</p>
+            </div>
+            <div class="d-two">
+              <p>{{ stats[0].title }}</p>
+              <p>{{ stats[0].title }}</p>
+              <p></p>
+            </div>
+            <div class="d-three">
+              <button mat-raised-button color="primary" class="call-patient">
+                CALL PATIENT
+              </button>
+              <button mat-raised-button class="re-schedule">
+                RE-SCHEDULE
+              </button>
+              <a routerLink="/">
+                <mat-icon class="mat-icon" color="warn">cancel</mat-icon>
+              </a>
+            </div>
+            <mat-divider></mat-divider>
+          </div>
+        </mat-card>
+      </cdk-virtual-scroll-viewport>
+
+  
+
+      <mat-form-field class="example-full-width">
+        <span matPrefix> <mat-icon matSuffix>search</mat-icon> &nbsp; </span>
+        <input matInput placeholder="Search example" />
+      </mat-form-field>
+    </div>
+  
+    <div class="g-two">
+      <mat-card>
+        <p>hello</p>
+      </mat-card>
+      <div>
+        <mat-card>
+          <p>hello</p>
+        </mat-card>
+      </div>
+      <div></div>
+    </div>
+   
+  </div> -->
+  <!-- ############################################################################### -->
+
+  <div>
+    <mat-grid-list cols="3" rowHeight="fit" style="height: 560px;">
+      <mat-grid-tile colspan="1" class="test">
+        <div class="g-one">
+          <p class="Upcoming-Patients">Upcoming Patients</p>
+          <cdk-virtual-scroll-viewport itemSize="100" class="container">
+            <mat-card>
+              <div *cdkVirtualFor="let number of numbers" class="number">
+                <div class="d-one">
+                  <h3>{{ stats[0].title }}</h3>
+                  <p>{{ stats[0].title }}</p>
+                </div>
+                <div class="d-two">
+                  <p>{{ stats[0].title }}</p>
+                  <p>{{ stats[0].title }}</p>
+                  <p></p>
+                </div>
+                <div class="d-three">
+                  <button
+                    mat-raised-button
+                    color="primary"
+                    class="call-patient"
+                  >
+                    CALL PATIENT
+                  </button>
+                  <button mat-raised-button class="re-schedule">
+                    RE-SCHEDULE
+                  </button>
+                  <a routerLink="/">
+                    <mat-icon class="mat-icon" color="warn">cancel</mat-icon>
+                  </a>
+                </div>
+                <mat-divider></mat-divider>
+              </div>
+            </mat-card>
+          </cdk-virtual-scroll-viewport>
+
+          <mat-divider></mat-divider>
+
+          <!-- <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Search example" />
+                      </mat-form-field> -->
+
+          <mat-form-field class="example-full-width">
+            <span matPrefix>
+              <mat-icon matSuffix>search</mat-icon> &nbsp;
+            </span>
+            <input matInput placeholder="Search example" />
+          </mat-form-field>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <p class="visitor-chat">Website Visitor chat</p>
+        <div class="container-for-line-chart">
+          <mat-card style="width: 95%; height: 50%;">
+            <!-- <p>hello</p> -->
+            <applinechart></applinechart>
+          </mat-card>
+        </div>
+        <div class="home-chart">
+          <div style="width: 48%; height: 50%;">
+            <div class="g-one">
+              <cdk-virtual-scroll-viewport itemSize="100" class="container">
+                <!-- <mat-card>
+                  <div *cdkVirtualFor="let number of numbers" class="numbers">
+                    <div class="d-one">
+                      <h3>{{ stats[0].title }}</h3>
+                      <p>{{ stats[0].title }}</p>
+                    </div>
+                    <div class="d-two">
+                      <p>{{ stats[0].title }}</p>
+                      <p>{{ stats[0].title }}</p>
+                      <p></p>
+                    </div>
+                    <div class="d-three">
+                      <button
+                        mat-raised-button
+                        color="primary"
+                        class="call-patient"
+                      >
+                        CALL PATIENT
+                      </button>
+                      <button mat-raised-button class="re-schedule">
+                        RE-SCHEDULE
+                      </button>
+                      <a routerLink="/">
+                        <mat-icon class="mat-icon" color="warn"
+                          >cancel</mat-icon
+                        >
+                      </a>
+                    </div>
+                    <mat-divider></mat-divider>
+                  </div>
+                </mat-card> -->
+                <mat-card class="m-card">
+                  <p class="Available-Doctors">Available Doctors</p>
+                  <div *cdkVirtualFor="let number of numbers" class="numbers">
+                    <div class="m-card-flex">
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <p id="profile">
+                        <span id="name">David Obi</span><br />
+                        <span>software developer</span>
+                      </p>
+                    </div>
+                  </div>
+                  <mat-divider></mat-divider>
+                </mat-card>
+              </cdk-virtual-scroll-viewport>
+
+              <mat-form-field class="example-full-width">
+                <span matPrefix>
+                  <mat-icon matSuffix>search</mat-icon> &nbsp;
+                </span>
+                <input matInput placeholder="Search example" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div>
+            <p class="income-expenses">Today income/expenses</p>
+            <mat-card class="pie-chart-grid">
+              <!-- <p>hello</p> -->
+              <appPieChart></appPieChart>
+            </mat-card>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <!-- ############################################################################################################## -->
+  <!-- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+    <div *cdkVirtualFor="let item of numbers" class="example-item">
+      {{ item }}
+    </div>
+  </cdk-virtual-scroll-viewport> -->
+
+  <!-- <div class="news-feeds-wrapper">
+    <div class="news-feeds-list open">
+      <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+        <div *cdkVirtualFor="let group of numbers">
+          <div class="time">{{ group }}</div>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+  </div> -->
+
+  <!-- <mat-grid-list cols="3" rowHeight="250px">
+    <mat-grid-tile
+      *ngFor="let card of cards | async"
+      [colspan]="card.cols"
+      [rowspan]="card.rows"
+    >
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{ card.title }}
+            <button
+              mat-icon-button
+              class="more-button"
+              [matMenuTriggerFor]="menu"
+              aria-label="Toggle menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>Card Content Here</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list> -->
+</div>
