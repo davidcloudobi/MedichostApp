@@ -92,7 +92,7 @@ import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component'
     SignupComponent,
     LoginmodalComponent,
     ForgotpasswordComponent,
-    SignupmodalComponent 
+    SignupmodalComponent, 
     MyCalenderComponent ,
     PatientnavbarComponent 
   ],

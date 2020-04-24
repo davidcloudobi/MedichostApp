@@ -1,0 +1,27 @@
+.social [class*="fa fa-"] {
+    background-color: rgb(241, 238, 238);
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin: auto 3px;
+    width: 30px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.cunt{
+    width: 100%;
+    
+}
+.pand{
+    /* padding-right: 3%;*/
+    padding-left: 3%; 
+    background-color: red;
+    text-align: center;
+}
+.formal{
+    padding-left: 5%;
+    padding-right: 5%;
+}
