@@ -135,7 +135,7 @@ height: 2em;
     left: 74px;
   }
 
-  .form-control{
+  /* .form-control{
     border: none;
     height: 3em;
     background-image: url("./assets/search-black-18dp.svg");
@@ -159,6 +159,6 @@ height: 2em;
   }.form-control ::placeholder{
     color:silver;
     opacity: 0.5;
-  }
+  } */
 
 
