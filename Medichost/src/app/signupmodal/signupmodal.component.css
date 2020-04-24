@@ -15,13 +15,33 @@
     width: 100%;
     
 }
+.fonter{
+     font-family:'Acme',serif;
+}
 .pand{
     /* padding-right: 3%;*/
-    padding-left: 3%; 
-    background-color: red;
+     padding-left: 3%;
+
     text-align: center;
 }
+
+.checker{
+    padding-right: 20%;
+    padding-left: 23%;
+}
+.contenter{
+    width: 100%;
+    
+}
+
+
 .formal{
     padding-left: 5%;
     padding-right: 5%;
+}
+
+.sizer{
+    width: 40%;
+    position: relative;
+
 }

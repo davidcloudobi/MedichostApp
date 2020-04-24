@@ -122,6 +122,7 @@ overflow: hidden;
   background:  linear-gradient(89deg, #2d2f48 0%, rgba(21, 94, 189, 0.651) 12%, #0d39b373 100%),url("../images/login.jpg") no-repeat;
   background-size: cover;
   height: 100%;
+  overflow: hidden;
   }
 
 /*# sourceMappingURL=login.css.map */
