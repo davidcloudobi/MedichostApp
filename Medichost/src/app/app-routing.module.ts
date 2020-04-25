@@ -13,9 +13,6 @@ import { MedicoPatientsComponent } from "./Appointment/medico-patients/medico-pa
 import { PatientsComponent } from "./Appointment/patients/patients.component";
 
 import { DoctorComponent } from './doctordashborad/dashboardlayout/dashboard.doctor.component';
-import { LoginComponent } from './login/login.component';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
-import { SignupComponent } from './signup/signup.component';
 import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
 const routes: Routes = [
   {
