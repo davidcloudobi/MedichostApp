@@ -1,0 +1,113 @@
+.appointmentRow:hover
+{
+  cursor: pointer;
+  font-size: larger;
+  font-weight: bold;
+  margin:5px -20px;
+  box-shadow: 3px 3px 5px 10px #ccc;
+  transition: margin 1s;
+}
+.appointmentRow
+{
+  font-weight: 500;
+  margin: 0 0 0 0;
+  transition: margin 1s;
+}
+.contacts>.appointmentRow>div>div
+{
+  margin: auto;
+}
+
+.contacts>.appointmentRow>div>.numbering:nth-child(odd)
+{
+  color:blue;
+  background-color: lightblue;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.contacts>.appointmentRow>div>.numbering:nth-child(2n)
+{
+  color:yellow;
+}
+.mat-tab-label
+{
+  background-color:blue;
+  margin-right: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color:white;
+  font-weight: 700;
+  font-size: larger;
+  height: 90px !important;
+  width: 250px !important;
+  text-align: start !important;
+}
+.mat-tab-label:selected
+{
+  background-color:white !important;
+  margin-right: 5px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color:blue;
+  font-weight: 700;
+}
+
+
+.pillButton
+{
+  border-radius: 80px;
+  width: 100%;
+  padding: 5px 0;
+  text-align: center;
+  box-shadow: 5px 5px 5px #def0f8;
+}
+
+.pillButtonNav
+{
+  padding: 10px 30px;
+  color: rgb(85, 140, 241);
+  line-height: 60px;
+  border-radius: 80px;
+  box-shadow: 5px 5px 5px #def0f8;
+}
+
+.vitals
+{
+  background-color: orange;
+  color: red;
+  padding: 12px 0;
+  width:150px;
+  text-align: center;
+  border-radius: 5%;
+}
+
+.check-in
+{
+  background-color: lightblue;
+  color:blue;
+  padding: 12px 0;
+  width:150px;
+  text-align: center;
+  border-radius: 5%;
+}
+
+.contacts .appointmentNumber:nth-of-type(odd),
+.oddNumber
+{
+  color:blue;
+  background-color: lightblue;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+.contacts .appointmentNumber:nth-of-type(even),
+.evenNumber
+{
+  color:red;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}

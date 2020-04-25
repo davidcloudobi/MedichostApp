@@ -36,7 +36,7 @@
 }
 .m-card-flex {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 
   margin-left: 0px;
 }

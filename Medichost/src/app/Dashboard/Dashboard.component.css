@@ -1,0 +1,9 @@
+mat-sidenav {
+  width: 20%;
+}
+
+.sideBarNav
+{
+  background-color: cornflowerblue;
+  font-weight: bold;
+}

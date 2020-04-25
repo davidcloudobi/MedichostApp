@@ -22,11 +22,24 @@
 @import '../node_modules/@syncfusion/ej2-base/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-angular-navigations/styles/material.css';
 
+@font-face {
+  font-family: Montserrat;
+  src: url("./assets/fonts/Montserrat-Bold.ttf");
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Montserrat, Roboto, "Helvetica Neue", sans-serif;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 mat-sidenav {
     width: 200px;
-  
+
   }
   .size{
    font-size: 100px;
@@ -79,7 +92,7 @@ height: 2em;
     font-size: 0.8em;
     text-align: center;
     border-radius:50% ;
-   
+
   }
   .drop{
     position: relative;
@@ -148,4 +161,4 @@ height: 2em;
     opacity: 0.5;
   } */
 
- 
+
