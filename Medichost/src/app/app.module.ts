@@ -30,11 +30,11 @@ import { DashboardComponentComponent } from './doctordashborad/dashboard-compone
 
 import { MyScheduleComponent } from './doctordashborad/dashboardlayout/scheduler.component';
 import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.component'
-import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
 import { SharedModules } from './shared/widget/shared.module';
-import { PatientDashBoardComponent } from './patientnavbar/patients-dashboard/patients.component';
-import { PatientDetailsHeaderComponent } from './patientnavbar/patientdetailsheader.component';
-import { UpcomingComponent } from './patientnavbar/upcoming.component';
+import { PatientnavbarComponent } from './dentalpatients/patientnavbar.component';
+import { PatientDashBoardComponent } from './dentalpatients/patients-dashboard/patients.component';
+import { PatientDetailsHeaderComponent } from './dentalpatients/patientdetailsheader.component';
+import { UpcomingComponent } from './dentalpatients/upcoming.component';
 
 
 
