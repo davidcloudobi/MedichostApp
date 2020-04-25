@@ -32,6 +32,9 @@ import { MyScheduleComponent } from './doctordashborad/dashboardlayout/scheduler
 import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.component'
 import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
 import { SharedModules } from './shared/widget/shared.module';
+import { PatientDashBoardComponent } from './patientnavbar/patients-dashboard/patients.component';
+import { PatientDetailsHeaderComponent } from './patientnavbar/patientdetailsheader.component';
+import { UpcomingComponent } from './patientnavbar/upcoming.component';
 
 
 
@@ -64,7 +67,10 @@ import { SharedModules } from './shared/widget/shared.module';
     MyCalenderComponent,
 
     MyCalenderComponent ,
-    PatientnavbarComponent
+    PatientnavbarComponent,
+    PatientDashBoardComponent,
+    PatientDetailsHeaderComponent,
+    UpcomingComponent
   ],
   entryComponents: [DialogTemplateComponent],
   imports: [

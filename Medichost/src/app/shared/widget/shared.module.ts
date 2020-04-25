@@ -52,7 +52,8 @@ const MODULES = [
     MatListModule,
     SidebarModule,
     MenuModule,
-    ListViewModule
+  ListViewModule,
+    
 ];
 
 @NgModule({
