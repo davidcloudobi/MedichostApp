@@ -12,38 +12,19 @@ import { HomepageComponent } from "./Appointment/homepage/homepage.component";
 import { MedicoPatientsComponent } from "./Appointment/medico-patients/medico-patients.component";
 import { PatientsComponent } from "./Appointment/patients/patients.component";
 
-import { DoctorComponent } from './doctordashborad/dashboardlayout/dashboard.doctor.component';
-import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
 const routes: Routes = [
     //{path: 'appointments', loadChildren: () => import('./appointment/appointment.module').then(m => m.AppointmentModule)},
-  //{path: 'doctor', loadChildren: () => import('./doctor/doctor.module').then(m => m.DoctorModule)},
+  {path: 'doctor', loadChildren: () => import('./doctor/doctor.module').then(m => m.DoctorModule)},
 
   {path:'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
   { path: 'schedule', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
-  { path: 'patients', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
+  { path: 'patients', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule) },
+  { path: 'patient', loadChildren: () => import('./patients/patients.module').then(m => m.SchedulerModule)},
   { path: 'error', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
   { path: "**", component: DashboardComponent },
 
-  {
-    path: "dashboard",
-    component: DefaultComponent,
-    children: [
-      {
-        path: "doctor",
-        component: DoctorComponent ,
-      },
-    ],
-  },
-  {
-    path: "patient",
-    component: DefaultComponent,
-    children: [
-      {
-        path: "details",
-        component: PatientnavbarComponent,
-      },
-    ],
-  },
+
+ 
   {
     path: "appointment",
     component: AppointmentDefaultComponent,
