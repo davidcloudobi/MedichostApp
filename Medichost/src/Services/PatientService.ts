@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+import { tap, catchError, map } from 'rxjs/operators';
 import { IPatientsModel } from 'src/Models/IPatientsModel';
 import { IDocumentModel } from 'src/Models/IDocumentModel';
 import { IUpcommingAppoinment } from 'src/Models/IUpcommingAppoinment';
@@ -13,12 +13,15 @@ export class PatientService{
   private patientsUrl = 'assets/api/patients.json';
   private documentUrl = 'assets/api/files.json'
   private upcomingAppointment ='assets/api/appointment.json'
-constructor(private http:HttpClient){}
-    loadPatients():Observable<IPatientsModel> {
-   return this.http.get<IPatientsModel>(this.patientsUrl).pipe(
-    tap(data => data),
-    catchError(this.handleError)
-  );
+  constructor(private http: HttpClient) { }
+  loadPatients(): Observable<IPatientsModel[]>{
+    return this.http.get<IPatientsModel[]>(this.patientsUrl).pipe(tap(data=> data),catchError(this.handleError))
+  }
+    loadPatient(id:number):Observable<IPatientsModel | undefined> {
+      return this.loadPatients()
+      .pipe(
+        map((products: IPatientsModel[]) => products.find(p => p.id === id))
+      );
 }
   loadDocument(): Observable<IDocumentModel[]>{
     return this.http.get<IDocumentModel[]>(this.documentUrl).pipe(tap(data => data),
