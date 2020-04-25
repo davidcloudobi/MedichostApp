@@ -11,4 +11,4 @@ import { SchedulerRouter } from './patientsRoutes.module';
   declarations: [ ],
   providers: [],
 })
-export class SchedulerModule {}
+export class PatientsModule {}

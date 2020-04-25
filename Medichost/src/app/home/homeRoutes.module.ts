@@ -5,49 +5,17 @@ import { AppointmentsComponent } from '../Appointment/appointments/appointments.
 import { PatientsComponent } from '../Appointment/patients/patients.component';
 import { HomepageComponent } from '../Appointment/homepage/homepage.component';
 import { AppointmentDefaultComponent } from '../Appointment/appointment-default/appointment-default.component';
-import { DefaultComponent } from './layouts/default/default.component';
 import { DoctorComponent } from '../doctor/doctordashborad/dashboardlayout/dashboard.doctor.component';
+import { DashboardComponentComponent } from '../doctor/doctordashborad/dashboard-component.component';
 
 const routes:Routes = [
-  {path: "", component: DefaultComponent, },
-  {path: "doctor", component: DoctorComponent, },
-  { path: "patient/details", component: PatientnavbarComponent,},
+  { path: "", component: HomepageComponent },
+  { path: "doctor", component: DashboardComponentComponent, },
   { path: "appointments", component: AppointmentsComponent },
   { path: "patients", component: PatientsComponent },
-  { path: "home", component: HomepageComponent },
   { path: "appointment", component: AppointmentDefaultComponent,}
 ]
 
-/*
-path: "dashboard",
-component: DefaultComponent,
-children: [
-  {
-    path: "doctor",
-    component: DoctorComponent ,
-  },
-],
-},
-{
-path: "patient",
-component: DefaultComponent,
-children: [
-  {
-    path: "details",
-    component: PatientnavbarComponent,
-  },
-],
-},
-{
-path: "appointment",
-component: AppointmentDefaultComponent,
-children: [
-  { path: "", component: HomepageComponent },
-  { path: "appointments", component: AppointmentsComponent },
-  { path: "patients", component: PatientsComponent },
-],
-}
-*/
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
