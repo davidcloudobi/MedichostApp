@@ -1,0 +1,29 @@
+[
+    {
+        "fileName":"Checkup Result.pdf",
+        "fileUrl":"#",
+        "fileSize":"123kb",
+        "downloaded":true
+    },
+    
+    {
+        "fileName":"Dental Xray Result.pdf",
+        "fileUrl":"#",
+        "fileSize":"13kb",
+        "downloaded":false
+    },
+    
+    {
+        "fileName":"Medical Prescription.pdf",
+        "fileUrl":"#",
+        "fileSize":"130kb",
+        "downloaded":true
+    },
+    
+    {
+        "fileName":"Dental Xray Result.pdf",
+        "fileUrl":"#",
+        "fileSize":"183kb",
+        "downloaded":false
+    }
+]
