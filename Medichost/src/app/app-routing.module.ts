@@ -1,29 +1,18 @@
 import { NgModule } from "@angular/core";
 
 import { Routes, RouterModule } from "@angular/router";
-import { DashboardComponent } from "./modules/dashboard/dashboard.component";
-import { DefaultComponent } from "./layouts/default/default.component";
-import { AppointmentDefaultComponent } from "./Appointment/appointment-default/appointment-default.component";
-import { SidebarComponent } from "./Appointment/sidebar/sidebar.component";
-import { HomeComponent } from "./Appointment/home/home.component";
-import { AppointmentsComponent } from "./Appointment/appointments/appointments.component";
-import { HomepageComponent } from "./Appointment/homepage/homepage.component";
+import { DashboardComponent } from "./home/dashboard/dashboard.component";
 
-import { MedicoPatientsComponent } from "./Appointment/medico-patients/medico-patients.component";
-import { PatientsComponent } from "./Appointment/patients/patients.component";
-
-import { DoctorComponent } from './doctordashborad/dashboardlayout/dashboard.doctor.component';
-import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
 const routes: Routes = [
     //{path: 'appointments', loadChildren: () => import('./appointment/appointment.module').then(m => m.AppointmentModule)},
-  //{path: 'doctor', loadChildren: () => import('./doctor/doctor.module').then(m => m.DoctorModule)},
+    { path: 'home',     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)},
+    { path: 'auth',     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
+    { path: 'schedule', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
+    { path: 'patients', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
+    { path: 'error',    loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
+    { path: "**",       component: DashboardComponent },
 
-  {path:'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
-  { path: 'schedule', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
-  { path: 'patients', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
-  { path: 'error', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
-  { path: "**", component: DashboardComponent },
-
+  /*
   {
     path: "dashboard",
     component: DefaultComponent,
@@ -53,6 +42,7 @@ const routes: Routes = [
       { path: "patients", component: PatientsComponent },
     ],
   },
+  */
 ];
 
 @NgModule({

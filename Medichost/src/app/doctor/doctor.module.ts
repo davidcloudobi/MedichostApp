@@ -1,14 +1,9 @@
 import { NgModule } from "@angular/core";
-import { SharedModules } from '../shared/widget/shared.module';
-import { DoctorRouter } from './doctorRoutes.module';
+import { SharedModules } from "../shared/widget/shared.module";
+import { DoctorRouter } from "./doctorRoutes.module";
 
 @NgModule({
-
-  imports: [
-    SharedModules,
-    DoctorRouter,
-  ],
-  declarations: [ ],
-  providers: [],
+  declarations: [],
+  imports: [SharedModules, DoctorRouter],
 })
 export class DoctorModule {}
