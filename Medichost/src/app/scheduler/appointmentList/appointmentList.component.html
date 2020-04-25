@@ -56,7 +56,7 @@
             <mat-card  class="appointmentRow " *ngFor="let appointment of appointmentList">
               <div class="row">
                 <div class="col-2">
-                  <span [className]="((appointmentList.indexOf(appointment) + 1) % 2 == 0) ? 'evenNumber' : 'oddNumber'">
+                  <span [className]="'numbering'">
                     {{appointmentList.indexOf(appointment) + 1}}
                   </span>
                 </div>
@@ -66,17 +66,17 @@
                 </div>
                 <div class="col-1">{{ appointment.contact}}</div>
                 <div class="col-1">
-                  <span [className]="patientCheck(appointment.appointmentTime.hours) ? 'text-success' : 'text-danger'">
+                  <span [className]="patientCheck(appointment) ? 'text-success' : 'text-danger'">
                     {{ appointment.appointmentTime.hours % 12}}:{{ appointment.appointmentTime.minutes.toString().padStart(2, "0")}} {{ appointment.appointmentTime.hours % 12 >= 0 ? 'PM' : 'AM'}}
                   </span>
                 </div>
-                <div [className]="'col-1' + patientCheck(appointment.appointmentTime.hours) ? 'vitals' : 'vitals'">
+                <div [className]="'col-1' + patientCheck(appointment) ? 'vitals' : 'vitals'">
 
-                    {{ timeElasped(appointment.appointmentTime.hours, appointment.appointmentTime.minutes)}}
+                    {{ timeElasped(appointment)}}
 
                 </div>
                 <div class="col-1 pillButton ml-5">
-                  {{ patientCheck(appointment.appointmentTime.hours) ? "Check In" : "Vitals"}}
+                  {{ patientCheck(appointment) ? "Check In" : "Vitals"}}
                 </div>
                 <div class=" offset-1 col-1 ">
                   <i class="fa-ellipsis-h"></i>

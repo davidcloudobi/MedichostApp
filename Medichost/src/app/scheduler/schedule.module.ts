@@ -3,6 +3,8 @@ import { SharedModules } from '../shared/widget/shared.module';
 import { SchedulerRouter } from './schedule.routes';
 import { AppointmentCreateComponent } from './appointmentCreate/appointmentCreate.component';
 import { AppointmentListComponent } from './appointmentList/appointmentList.component';
+import { WaitingListResolver } from 'src/resolvers/schedule/waitingList.resolver';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
 
@@ -11,6 +13,6 @@ import { AppointmentListComponent } from './appointmentList/appointmentList.comp
     SchedulerRouter,
   ],
   declarations: [ AppointmentCreateComponent, AppointmentListComponent],
-  providers: [],
+  providers: [WaitingListResolver],
 })
 export class SchedulerModule {}

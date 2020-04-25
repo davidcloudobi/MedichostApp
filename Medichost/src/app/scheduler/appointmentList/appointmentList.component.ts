@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { appointmentCard } from 'src/models/appointmentCard';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-appointmentList',
@@ -10,27 +11,31 @@ import { appointmentCard } from 'src/models/appointmentCard';
 export class AppointmentListComponent implements OnInit {
 
   appointmentList:appointmentCard[];
-  constructor() { }
+  constructor(private routeParam: ActivatedRoute) {  }
 
   ngOnInit()
   {
-    this.appointmentList = SAMPLE_DATA.sort((a,b) => (a.appointmentTime.hours * 60 + a.appointmentTime.minutes) - (b.appointmentTime.hours * 60 + b.appointmentTime.minutes));
+    this.appointmentList = this.routeParam.snapshot.data.appointmentList;
   }
 
-  timeElasped(hours:number, minutes:number):string{
-    if(hours > new Date(Date.now()).getHours() || (hours >= new Date(Date.now()).getHours() && minutes >= new Date(Date.now()).getMinutes()))
+  timeElasped(time:appointmentCard):string{
+
+    const totalElapsed = new Date(Date.now()).getHours() * 60 + new Date(Date.now()).getMinutes();
+    const appointmentTime = time.appointmentTime.hours * 60 + time.appointmentTime.minutes;
+
+    if(appointmentTime < totalElapsed)
     {
-      return 'Not Arrived';
+      let delay = totalElapsed - appointmentTime;
+      return (delay / 60 > 0) ? (delay/60 + ":" + delay%60).padStart(2, "0")+" Hrs" : `${delay%60}`.padStart(2, "0") + "mins";
     }
-    let minutesDiff = minutes < new Date(Date.now()).getMinutes() ? new Date(Date.now()).getMinutes() : 0;
-    let hourDiff = hours < new Date(Date.now()).getHours() ? new Date(Date.now()).getHours() - hours : 0;
 
-    return hourDiff > 0 ?  hourDiff+":"+minutesDiff.toString().padStart(2, "0")+" Hrs" : minutesDiff.toString().padStart(2, "0") + "mins";
+    return 'Not Arrived';
   }
 
-  patientCheck(hours:number):boolean
+  patientCheck(time:appointmentCard):boolean
   {
-    return hours > new Date(Date.now()).getHours();
+    const currentTime = new Date(Date.now());
+    return (time.appointmentTime.hours * 60 + time.appointmentTime.minutes) > (currentTime.getHours() * 60 + currentTime.getMinutes());
   }
 
   todayDate():string
@@ -40,15 +45,6 @@ export class AppointmentListComponent implements OnInit {
   }
 
 }
-
-const SAMPLE_DATA : appointmentCard[] = [
-  { userID: '', name:'Varun Bose', gender:'Male', age:32, imageURL:'',contact:456212455, appointmentTime: {hours:17, minutes:10}},
-  { userID: '', name:'Jhon Wick', gender:'Male', age:45, imageURL:'',contact:456212455, appointmentTime: {hours:14, minutes:30},},
-  { userID: '', name:'Johny Ive', gender:'Male', age:31, imageURL:'',contact:456212455, appointmentTime: {hours:15, minutes:3},},
-  { userID: '', name:'Sufiya', gender:'Female', age:28, imageURL:'',contact:456212455, appointmentTime: {hours:15, minutes:45},},
-  { userID: '', name:'David John', gender:'Male', age:55, imageURL:'',contact:456212455, appointmentTime: {hours:23, minutes:10},},
-  { userID: '', name:'Emma', gender:'Female', age:30, imageURL:'',contact:456212455, appointmentTime: {hours:18, minutes:30},},
-]
 
 
 

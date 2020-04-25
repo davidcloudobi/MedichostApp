@@ -26,6 +26,7 @@ import { DoctorComponent } from '../doctor/doctordashborad/dashboardlayout/dashb
 import { MyScheduleComponent } from '../doctor/doctordashborad/dashboardlayout/scheduler.component';
 import { MyCalenderComponent } from '../doctor/doctordashborad/dashboardlayout/calender.component';
 import { HomeRouter } from './home.routes';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -55,11 +56,11 @@ import { HomeRouter } from './home.routes';
     MyScheduleComponent,
     MyCalenderComponent,
 
-    MyCalenderComponent ,
     PatientnavbarComponent
   ],
   entryComponents: [DialogTemplateComponent],
   imports: [
+    CommonModule,
     SharedModules,
     HomeRouter,
   ],

@@ -18,7 +18,7 @@
   margin: auto;
 }
 
-.contacts>.appointmentRow>div>.numbering:nth-child(odd)
+.contacts .numbering:nth-child(odd)
 {
   color:blue;
   background-color: lightblue;
@@ -27,9 +27,13 @@
   font-weight: bold;
 }
 
-.contacts>.appointmentRow>div>.numbering:nth-child(2n)
+.contacts> .numbering:nth-child(even)
 {
-  color:yellow;
+  color:red;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: bold;
 }
 .mat-tab-label
 {
@@ -91,23 +95,4 @@
   width:150px;
   text-align: center;
   border-radius: 5%;
-}
-
-.contacts .appointmentNumber:nth-of-type(odd),
-.oddNumber
-{
-  color:blue;
-  background-color: lightblue;
-  padding: 10px;
-  border-radius: 3px;
-  font-weight: bold;
-}
-.contacts .appointmentNumber:nth-of-type(even),
-.evenNumber
-{
-  color:red;
-  background-color: orange;
-  padding: 10px;
-  border-radius: 3px;
-  font-weight: bold;
 }
