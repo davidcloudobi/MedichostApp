@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { SharedModules } from '../shared/widget/shared.module';
-import { FallbackRouter } from './fallbacksRoutes.module';
+import { FallbackRouter } from './fallbacks.routes';
 
 @NgModule({
 

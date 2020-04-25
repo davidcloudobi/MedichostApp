@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { SharedModules } from '../shared/widget/shared.module';
-import { SchedulerRouter } from './patientsRoutes.module';
+import { SchedulerRouter } from './patients.routes';
 
 @NgModule({
 

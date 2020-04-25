@@ -1,11 +1,10 @@
 import { NgModule } from "@angular/core";
-import { AppointmentRouter } from "./appointmentRouter.module";
-import SharedComponents from '../sharedComponent.module';
 
 @NgModule({
 
-  imports: [AppointmentRouter],
-  declarations: [ ...SharedComponents ],
+  imports: [],
+  declarations: [ ],
   providers: [],
 })
-export class AppointmentModule {}
+
+export class AppointmentModule { }

@@ -21,11 +21,11 @@ import { PatientnavbarComponent } from '../patients/patientnavbar/patientnavbar.
 import { SharedModules } from '../shared/widget/shared.module';
 import { DialogService } from '../Appointment/appointments/table/dialog.service';
 import { DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService } from '@syncfusion/ej2-angular-schedule';
-import { HomeRouter } from './homeRoutes.module';
 import { DashboardComponentComponent } from '../doctor/doctordashborad/dashboard-component.component';
 import { DoctorComponent } from '../doctor/doctordashborad/dashboardlayout/dashboard.doctor.component';
 import { MyScheduleComponent } from '../doctor/doctordashborad/dashboardlayout/scheduler.component';
 import { MyCalenderComponent } from '../doctor/doctordashborad/dashboardlayout/calender.component';
+import { HomeRouter } from './home.routes';
 
 
 @NgModule({
