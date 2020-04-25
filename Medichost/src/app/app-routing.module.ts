@@ -15,16 +15,15 @@ import { PatientsComponent } from "./Appointment/patients/patients.component";
 import { DoctorComponent } from './doctordashborad/dashboardlayout/dashboard.doctor.component';
 import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
 const routes: Routes = [
-  {
-    path: "",
-    component: DefaultComponent,
-    children: [
-      {
-        path: "dashboard",
-        component: DashboardComponent,
-      },
-    ],
-  },
+    //{path: 'appointments', loadChildren: () => import('./appointment/appointment.module').then(m => m.AppointmentModule)},
+  //{path: 'doctor', loadChildren: () => import('./doctor/doctor.module').then(m => m.DoctorModule)},
+
+  {path:'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
+  { path: 'schedule', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
+  { path: 'patients', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
+  { path: 'error', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
+  { path: "**", component: DashboardComponent },
+
   {
     path: "dashboard",
     component: DefaultComponent,
@@ -54,8 +53,6 @@ const routes: Routes = [
       { path: "patients", component: PatientsComponent },
     ],
   },
-  //{path: 'appointments', loadChildren: () => import('./appointment/appointment.module').then(m => m.AppointmentModule)},
-  {path:'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)}
 ];
 
 @NgModule({

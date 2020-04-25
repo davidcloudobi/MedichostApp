@@ -23,10 +23,12 @@ import { MatListModule } from '@angular/material/list';
 import { SidebarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
-import { MaterialModule } from 'src/app/material/material.module';
+import { MaterialModule } from 'src/app/shared/material/material.module';
+import { AngularMaterialsModules } from 'src/app/shared/materialsModule/material_module';
 
 const MODULES = [
     MaterialModule,
+    AngularMaterialsModules,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
