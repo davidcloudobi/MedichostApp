@@ -1,4 +1,5 @@
-{
+[{
+    "id":3,
     "gender":"male",
     "city":"lagos",
     "phoneNumber":"0908828828",
@@ -6,5 +7,47 @@
     "birthday":"feb 29th 2000",
     "streetAddress":"no 2 traditions building",
     "memberStatus":"active member",
-    "registeredDate":"feb 21th 2019"
+    "registeredDate":"feb 21th 2019",
+    "name":"george orwell",
+    "email":"georgeorwell@gmail.com"
+},
+{"id":2,
+    "gender":"male",
+    "city":"lagos",
+    "phoneNumber":"0908828828",
+    "zipCode":"01002",
+    "birthday":"feb 29th 2000",
+    "streetAddress":"no 2 traditions building",
+    "memberStatus":"active member",
+    "registeredDate":"feb 21th 2019",
+    "name":"george orwell",
+    "email":"georgeorwell@gmail.com"
+},
+
+{
+    "id":1,
+    "gender":"male",
+    "city":"lagos",
+    "phoneNumber":"0908828828",
+    "zipCode":"01002",
+    "birthday":"feb 29th 2000",
+    "streetAddress":"no 2 traditions building",
+    "memberStatus":"active member",
+    "registeredDate":"feb 21th 2019",
+    "name":"Daine corper",
+    "email":"georgeorwell@gmail.com"
+},
+{
+    "id":4,
+    "gender":"female",
+    "city":"lagos",
+    "phoneNumber":"0908828828",
+    "zipCode":"01002",
+    "birthday":"feb 29th 2000",
+    "streetAddress":"no 2 traditions building",
+    "memberStatus":"active member",
+    "registeredDate":"feb 21th 2019",
+    "name":"franca orwell",
+    "email":"georgeorwell@gmail.com"
 }
+]
