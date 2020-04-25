@@ -1,3 +1,113 @@
-<p>
-  appointmentCreate works!
-</p>
+<div class="vh-100 bg-light">
+  <div class=" row d-flex justify-content-between bg-white">
+    <div class="d-flex justify-content-center font-weight-bold">
+      <mat-card class="bg-primary text-white-50 m-1"><h1 class="text-center">Medico</h1></mat-card>
+      <mat-card class="m-1">
+        <div class="d-flex">
+          <div></div>
+          <div class="d-flex flex-column">
+            <span>Dr. Nishant Clinician</span>
+            <span class="text-black-50">Kids Care Clinic</span>
+          </div>
+          <div></div>
+        </div>
+      </mat-card>
+      <mat-card class="m-1">
+        <div class="d-flex">
+          <div>
+
+          </div>
+          <div class="d-flex flex-column">
+            <span>Today</span>
+            <span class="text-uppercase text-primary">{{ todayDate()}}</span>
+          </div>
+          <div>
+
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <div class="d-flex m-2">
+      <span class="pillButtonNav mr-4">Appointment</span>
+      <span class="pillButtonNav mr-4">Walk-In</span>
+      <div>*</div>
+    </div>
+  </div>
+  <div class="m-5">
+    <mat-tab-group>
+      <mat-tab >
+        <ng-template mat-tab-label>
+            <span>{{appointmentList.length.toString().padStart(2, "0")}}<br/>Queue</span>
+        </ng-template>
+        <div class="m-5">
+
+          <mat-card>
+            <div class="row text-uppercase font-weight-bold font-black-50 p-4 font-size-large">
+              <div class="col-2"></div>
+              <div class="col-2">patient</div>
+              <div class="col-1">contact</div>
+              <div class="col-1">appointment</div>
+              <div class="col-1">waited</div>
+              <div class="col-1"></div>
+              <div class="offset-1 col-1"></div>
+            </div>
+          </mat-card>
+          <div class="contacts">
+            <mat-card  class="appointmentRow " *ngFor="let appointment of appointmentList">
+              <div class="row">
+                <div class="col-2">
+                  <span [className]="((appointmentList.indexOf(appointment) + 1) % 2 == 0) ? 'evenNumber' : 'oddNumber'">
+                    {{appointmentList.indexOf(appointment) + 1}}
+                  </span>
+                </div>
+                <div class="col-2 d-flex flex-column align-items-start">
+                  <span>{{appointment.name}}</span>
+                  <span class="text-black-50">{{appointment.gender}}, {{appointment.age}} yr</span>
+                </div>
+                <div class="col-1">{{ appointment.contact}}</div>
+                <div class="col-1">
+                  <span [className]="patientCheck(appointment.appointmentTime.hours) ? 'text-success' : 'text-danger'">
+                    {{ appointment.appointmentTime.hours % 12}}:{{ appointment.appointmentTime.minutes.toString().padStart(2, "0")}} {{ appointment.appointmentTime.hours % 12 >= 0 ? 'PM' : 'AM'}}
+                  </span>
+                </div>
+                <div [className]="'col-1' + patientCheck(appointment.appointmentTime.hours) ? 'vitals' : 'vitals'">
+
+                    {{ timeElasped(appointment.appointmentTime.hours, appointment.appointmentTime.minutes)}}
+
+                </div>
+                <div class="col-1 pillButton ml-5">
+                  {{ patientCheck(appointment.appointmentTime.hours) ? "Check In" : "Vitals"}}
+                </div>
+                <div class=" offset-1 col-1 ">
+                  <i class="fa-ellipsis-h"></i>
+                </div>
+              </div>
+            </mat-card>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label >
+          <span>02<br/>Earlier</span>
+        </ng-template>
+        <h1>Coming Soon</h1>
+        <p>...</p>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label >
+          <span>05<br/>Wait List</span>
+        </ng-template>
+        <h1>Coming Soon</h1>
+        <p>...</p>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label >
+          <span>0<br/>No Show</span>
+        </ng-template>
+        <h1>Coming Soon</h1>
+        <p>...</p>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
