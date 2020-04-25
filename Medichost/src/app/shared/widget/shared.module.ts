@@ -25,8 +25,10 @@ import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { MaterialModule } from 'src/app/shared/material/material.module';
 import { AngularMaterialsModules } from 'src/app/shared/materialsModule/material_module';
+import { CommonModule } from '@angular/common';
 
 const MODULES = [
+    CommonModule,
     MaterialModule,
     AngularMaterialsModules,
     MatGridListModule,
