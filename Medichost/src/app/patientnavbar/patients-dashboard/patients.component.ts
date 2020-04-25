@@ -33,7 +33,7 @@ export class PatientDashBoardComponent implements OnInit{
     }
   
     ngOnInit(): void {
-        this.patientsService.loadPatients().subscribe({
+        this.patientsService.loadPatient(1).subscribe({
             next: patient => {
                 this.Patients = patient;
               
