@@ -29,12 +29,7 @@ import { DoctorComponent } from "./doctordashborad/dashboardlayout/dashboard.doc
 import { DashboardComponentComponent } from './doctordashborad/dashboard-component.component';
 
 import { MyScheduleComponent } from './doctordashborad/dashboardlayout/scheduler.component';
-import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { LoginmodalComponent } from './loginmodal/loginmodal.component';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
-import { SignupmodalComponent } from './signupmodal/signupmodal.component';
+import { MyCalenderComponent } from './doctordashborad/dashboardlayout/calender.component'
 import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
 import { SharedModules } from './shared/widget/shared.module';
 
@@ -67,11 +62,7 @@ import { SharedModules } from './shared/widget/shared.module';
     DoctorComponent,
     MyScheduleComponent,
     MyCalenderComponent,
-    LoginComponent,
-    SignupComponent,
-    LoginmodalComponent,
-    ForgotpasswordComponent,
-    SignupmodalComponent,
+
     MyCalenderComponent ,
     PatientnavbarComponent
   ],

@@ -57,18 +57,8 @@ const routes: Routes = [
       { path: "patients", component: PatientsComponent },
     ],
   },
-  {
-    path:"login",
-    component:LoginComponent
-  },
-  {
-    path:"forgetpassword",
-    component:ForgotpasswordComponent
-  },
-  {
-    path:"signup",
-    component:SignupComponent
-  }
+  //{path: 'appointments', loadChildren: () => import('./appointment/appointment.module').then(m => m.AppointmentModule)},
+  {path:'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)}
 ];
 
 @NgModule({
