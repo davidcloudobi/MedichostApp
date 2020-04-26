@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { appointmentCard } from 'src/models/appointmentCard';
 
 @Component({
   selector: 'app-book-appointment',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookAppointmentComponent implements OnInit {
 
+  searchedFor:boolean = false;
+  searchResult: appointmentCard[] = [];
+  
   constructor() { }
 
   ngOnInit(): void {

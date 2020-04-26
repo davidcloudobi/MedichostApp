@@ -27,6 +27,8 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
 import { AngularMaterialsModules } from 'src/app/shared/materialsModule/material_module';
 import { CommonModule } from '@angular/common';
 
+import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+
 const MODULES = [
     CommonModule,
     MaterialModule,
@@ -56,6 +58,7 @@ const MODULES = [
     MenuModule,
     ListViewModule,
     TabModule,
+    RadioButtonModule,
 ];
 
 @NgModule({

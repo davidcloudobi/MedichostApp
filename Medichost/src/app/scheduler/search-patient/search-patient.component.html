@@ -1,1 +1,16 @@
-<p>search-patient works!</p>
+<div class="m-3 form-group">
+  <input type="text" class="bg-light form-control" placeholder="Search patient name / Mobile number" />
+  <span class="input-prepend">()()()</span>
+</div>
+
+<div class="m-5">
+  <div *ngIf="!searchedFor"></div>
+  <div *ngIf="searchedFor">
+    <div **ngIf="!searchResult.some(data => data)">No Patient Matching Provided Information</div>
+    <div *ngFor="let patient of searchResult">
+      <div class="e-card">
+        {{patient.name}}
+      </div>
+    </div>
+  </div>
+</div>
