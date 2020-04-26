@@ -9,7 +9,7 @@ import { appointmentCard } from 'src/models/appointmentCard';
 export class SearchPatientComponent implements OnInit {
 
   searchedFor:boolean = false;
-  searchResult: appointmentCard[] = [];
+  searchPatients: appointmentCard[] = [];
 
   constructor() { }
 

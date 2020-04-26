@@ -1,18 +1,17 @@
 <app-schedule-nav [displayExtra]="false" [doctorDetail]="currentDoctor"></app-schedule-nav>
 
 <div class="container">
-  <div class="row">
-    <span> Appointment | {{currentAddress}}</span>
+  <div class="row m-4 font-weight-bold">
+    <span> {{viewModel.currentAddress}}</span>
   </div>
   <div class="row">
     <div class="col-md-4">
-      <mat-calendar #calendar [(selected)]="selectedDate" (selectedChange)="dateChanged($event)">
-      </mat-calendar>
+      <ejs-calendar [value]='viewModel.dateValue' [min]='viewModel.minDate' [max]='viewModel.maxDate' cssClass="responsive"></ejs-calendar>
     </div>
     <div class="col-md-8">
       <div class="mb-4">
         <div class="d-flex justify-content-between mb-3">
-          <span>
+          <span class="font-weigth-bold">
             ##
             <span>Morning<br>9:00 AM to 12:00 PM</span>
           </span>
@@ -20,10 +19,15 @@
         </div>
 
         <div>
-          <mat-radio-group>
-            <mat-radio-button class="m-3" value="{{time.hour+time.minute}}" *ngFor="let time of morningScheduling">  {{time.hour % 13}}:{{time.minute}} {{time.hour > 11 ? 'PM' : 'AM'}}</mat-radio-button>
-          </mat-radio-group>
+          <ul class="row">
+            <div class="col-3" *ngFor="let time of viewModel.morningSchedule">
+              <li class="radioSelect">
+                <ejs-radiobutton [label]="getMorningSchedule(time)" name="evening" [value]="time" ></ejs-radiobutton>
+              </li>
+            </div>
+          </ul>
         </div>
+
       </div>
       <hr />
       <div class="mb-4">
@@ -34,10 +38,14 @@
           </span>
           <span><a href="#">+ Add Slot</a></span>
         </div>
-        <div>
-          <mat-radio-group>
-            <mat-radio-button class="m-3" value="{{time.hour+time.minute}}" *ngFor="let time of eveningScheduling">  {{time.hour % 13}}:{{time.minute}} {{time.hour > 11 ? 'PM' : 'AM'}}</mat-radio-button>
-          </mat-radio-group>
+        <div >
+          <ul class="row">
+            <div class="col-3" *ngFor="let time of viewModel.eveningSchedule">
+              <li class="radioSelect text-center">
+                <ejs-radiobutton [label]="getEveningSchedule(time)" name="evening" [value]="time"></ejs-radiobutton>
+              </li>
+            </div>
+          </ul>
         </div>
       </div>
       <hr />
@@ -53,3 +61,7 @@
     </div>
   </div>
 </div>
+
+
+
+

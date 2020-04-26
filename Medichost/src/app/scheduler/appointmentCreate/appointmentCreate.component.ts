@@ -10,33 +10,43 @@ import { appointmentDoctor } from 'src/models/appointmentDoctor';
 export class AppointmentCreateComponent implements OnInit {
 
   constructor() { }
-  selectedDate:any;
-  currentAddress:string = "Home > Appointment";
   currentDoctor:appointmentDoctor;
-  morningScheduling:any[] = [];
-  eveningScheduling:any[] = [];
+  viewModel:any = {
+    currentAddress: "Home | Appointment",
+    eveningSchedule : Array(4 * 6 + 1).fill(0).map((s,i)=>i * 10),
+    morningSchedule : Array(3 * 6 + 1).fill(0).map((s, i) => i * 10),
+    month : new Date().getMonth(),
+    fullYear : new Date().getFullYear(),
+    dateValue : new Date(Date.now()),
+    minDate : new Date(2000, 1 , 1),
+    maxDate : new Date(2050, 11, 15),
+  }
 
   ngOnInit()
   {
-    for(let h = 9, m = 0; h < 12 ;)
-    {
-
-      if(m % 60 == 0)h++;
-      this.morningScheduling.push({hour:h, minute:m % 60});
-      m += 10;
-    }
-
-    for(let h = 17, m = 0; h < 22;)
-    {
-      if(m % 60 == 0)h++;
-      this.eveningScheduling.push({hour:h, minute:m % 60});
-      m += 10;
-    }
   }
 
-  dateChanged(date)
+
+  getEveningSchedule(evening:number):string
   {
-    alert(`Selected: ${date}`);
+    const startTime = 5;
+    const currentTime = startTime * 60 + evening;
+    const hours = `${Math.floor(currentTime / 60 )}`.padStart(2, "0");
+    const minutes = `${currentTime % 60}`.padStart(2, "0");
+
+    return `${hours}:${minutes} PM`;
+  }
+
+  getMorningSchedule(morning:number):string
+  {
+    const startTime = 9;
+    const currentTime = startTime * 60 + morning;
+
+    const hour = Math.floor(currentTime / 60);
+    const hours = `${hour}`.padStart(2, "0");
+    const minutes = `${currentTime % 60}`.padStart(2, "0");
+
+    return `${hours}:${minutes} ${hour == 12 ? 'PM' : 'AM'}`;
   }
 }
 
