@@ -24,12 +24,6 @@ export class AppointmentListsComponent implements OnInit {
     this.appointmentList = routeData.doctorDetail;
   }
 
-  todayDate():string
-  {
-    let today =  new Date(Date.now()).toString().split(" ");
-    return `${today[2]} ${today[1]} ${today[3]}`.toUpperCase();
-  }
-
   sortAppointmentList(appointments: appointmentCard[]):appointmentSort
   {
     return appointments.reduce((reducer, item) =>

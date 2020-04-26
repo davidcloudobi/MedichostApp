@@ -1,7 +1,7 @@
 <div class="vh-100 bg-light ml-2 mr-2">
 
-   <app-schedule-nav [displayExtra]="true"></app-schedule-nav>
-   
+   <app-schedule-nav [displayExtra]="true" [doctorDetail]="currentDoctor"></app-schedule-nav>
+
   <div class="m-5">
     <patient-list [appointments] = "appointmentList"></patient-list>
   </div>

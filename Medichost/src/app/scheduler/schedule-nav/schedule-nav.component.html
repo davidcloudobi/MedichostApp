@@ -6,14 +6,18 @@
     <div class="e-card">
       <div class="d-flex justify-content-between">
         <div></div>
-        <div class="d-flex flex-column"><span>Dr. Nishant Clinician</span> <span class="text-black-50">Kids Care Clinic</span> </div>
+        <div class="d-flex flex-column">
+          <span>{{doctorDetail.name}}</span>
+          <span class="text-black-50">{{doctorDetail.department}}</span> </div>
         <div></div>
       </div>
     </div>
     <div class="e-card" *ngIf="displayExtra">
       <div class="d-flex justify-content-between">
         <div> </div>
-        <div class="d-flex flex-column"> <span>Today</span>   <span class="text-primary">{{ todayDate()}}</span> </div>
+        <div class="d-flex flex-column">
+          <span>Today</span>
+          <span class="text-primary">{{ todayDate()}}</span> </div>
         <div> </div>
       </div>
     </div>

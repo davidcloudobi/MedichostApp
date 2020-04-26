@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { appointmentCard } from 'src/models/appointmentCard';
+import { appointmentDoctor } from 'src/models/appointmentDoctor';
 
 @Component({
   selector: 'app-appointmentCreate',
@@ -11,6 +12,7 @@ export class AppointmentCreateComponent implements OnInit {
   constructor() { }
   selectedDate:any;
   currentAddress:string = "Home > Appointment";
+  currentDoctor:appointmentDoctor;
   morningScheduling:any[] = [];
   eveningScheduling:any[] = [];
 
