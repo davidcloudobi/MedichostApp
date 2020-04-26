@@ -13,7 +13,7 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
 
 const routes: Routes = [
     //{path: 'appointments', loadChildren: () => import('./appointment/appointment.module').then(m => m.AppointmentModule)},
-  {path: 'doctor', loadChildren: () => import('./doctor/doctor.module').then(m => m.DoctorModule)},
+  // {path: 'doctor', loadChildren: () => import('./doctor/doctor.module').then(m => m.DoctorModule)},
 
   {path:'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
   { path: 'schedule', loadChildren: () => import('./scheduler/schedule.module').then(m => m.SchedulerModule)},
