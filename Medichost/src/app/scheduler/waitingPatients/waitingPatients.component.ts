@@ -9,15 +9,14 @@ import { appointmentSort } from 'src/models/appointmentSorter';
 })
 export class WaitingPatientsComponent implements OnInit {
 
-  @Input() patients:appointmentCard[];
   @Input() appointments : appointmentSort;
-  
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  timeElasped(time:appointmentCard):string{
+  timeElapsed(time:appointmentCard):string{
 
     const totalElapsed = new Date(Date.now()).getHours() * 60 + new Date(Date.now()).getMinutes();
     const appointmentTime = time.appointmentTime.hours * 60 + time.appointmentTime.minutes;
@@ -42,7 +41,7 @@ export class WaitingPatientsComponent implements OnInit {
   }
 
   isEven(patient:appointmentCard):boolean{
-    return (this.patients.indexOf(patient) + 1) % 2 == 0
+    return (this.appointments.onQueue.indexOf(patient) + 1) % 2 == 0
   }
 
   displayAppointmentTime(patient:appointmentCard):string{

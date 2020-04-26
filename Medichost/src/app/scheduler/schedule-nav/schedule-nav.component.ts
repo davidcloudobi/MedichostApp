@@ -10,11 +10,20 @@ export class ScheduleNavComponent implements OnInit {
   @Input() displayExtra:boolean;
   @Input() doctorDetail:appointmentDoctor;
 
+  doctor:appointmentDoctor = {
+    name: "Dr. James Ohoi",
+    department: "Kids Clinic",
+    imageURL: "",
+    doctorID: "232323"
+  }
+
+  displayExtras:boolean = true;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-  
+
   todayDate():string
   {
     let today =  new Date(Date.now()).toString().split(" ");

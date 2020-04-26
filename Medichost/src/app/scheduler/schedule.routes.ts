@@ -4,10 +4,12 @@ import { AppointmentCreateComponent } from './appointmentCreate/appointmentCreat
 import { AppointmentListsComponent } from './appointmentList/appointmentList.component';
 import { WaitingListResolver } from 'src/resolvers/schedule/waitingList.resolver';
 import { DoctorDetailResolver } from 'src/resolvers/schedule/doctorDetail.resolver';
+import { ScheduleNavComponent } from './schedule-nav/schedule-nav.component';
 
 const routes:Routes = [
  { path: "create", component: AppointmentCreateComponent },
- { path: "waiting", component: AppointmentListsComponent, resolve: { appointmentList: WaitingListResolver, doctorDetail: DoctorDetailResolver} }
+ { path: "waiting", component: AppointmentListsComponent, resolve: { appointmentList: WaitingListResolver, doctorDetail: DoctorDetailResolver} },
+ { path: "**", component: ScheduleNavComponent },
 ]
 
 @NgModule({
