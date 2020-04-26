@@ -10,7 +10,7 @@ import { appointmentDoctor } from 'src/models/appointmentDoctor';
   styleUrls: ['./appointmentList.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppointmentListComponent implements OnInit {
+export class AppointmentListsComponent implements OnInit {
 
   appointmentList: appointmentSort;
   currentDoctor: appointmentDoctor;
@@ -19,8 +19,9 @@ export class AppointmentListComponent implements OnInit {
 
   ngOnInit()
   {
-    this.appointmentList = this.sortAppointmentList(this.routeParam.snapshot.data.appointmentList);
-    this.appointmentList = this.routeParam.snapshot.data.doctorDetail;
+    const routeData = this.routeParam.snapshot.data;
+    this.appointmentList = this.sortAppointmentList(routeData.appointmentList);
+    this.appointmentList = routeData.doctorDetail;
   }
 
   todayDate():string

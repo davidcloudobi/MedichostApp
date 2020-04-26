@@ -1,35 +1,8 @@
 <div class="vh-100 bg-light ml-2 mr-2">
 
-  <div class=" row d-flex justify-content-between bg-white">
-    <div class="d-flex justify-content-center font-weight-bold">
-      <div class="e-card">
-        <span class="logoText">Medico</span>
-      </div>
-      <div class="e-card">
-        <div class="d-flex justify-content-between">
-          <div></div>
-          <div class="d-flex flex-column"><span>Dr. Nishant Clinician</span> <span class="text-black-50">Kids Care Clinic</span> </div>
-          <div></div>
-        </div>
-      </div>
-      <div class="e-card">
-        <div class="d-flex justify-content-between">
-          <div> </div>
-          <div class="d-flex flex-column"> <span>Today</span>   <span class="text-primary">{{ todayDate()}}</span> </div>
-          <div> </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="d-flex m-2">
-      <span class="pillButtonNav mr-4">Appointment</span>
-      <span class="pillButtonNav mr-4">Walk-In</span>
-      <div>*</div>
-    </div>
-  </div>
-
+   <app-schedule-nav [displayExtra]="true"></app-schedule-nav>
+   
   <div class="m-5">
     <patient-list [appointments] = "appointmentList"></patient-list>
   </div>
-</div>
 
