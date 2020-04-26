@@ -132,13 +132,13 @@
       <div class="card col-sm-3" *ngIf="document">
         <div class="d-flex justify-content-between file-font" >
         <div> <h1>Files/Document</h1></div>
-         <div class="mt-2" ><a [routerLink]="" class="text-primary text-decoration-none" id="addfile"><fa-icon class="text-primary mr-1" [icon]="faFileUpload"></fa-icon>Add File</a> </div>
+         <div class="mt-2" ><a routerLink="" class="text-primary text-decoration-none" id="addfile"><fa-icon class="text-primary mr-1" [icon]="faFileUpload"></fa-icon>Add File</a> </div>
         </div>
         <ul class="list-group list-group-flush file-font" *ngFor="let doc of document">
           <li  class="list-group-item d-flex justify-content-between">
             <div>
             <fa-icon  class=" mr-3"  [icon]="faFileAlt"></fa-icon>
-            <a class="text-decoration-none " [routerLink]="doc.Url">{{doc.fileName}}</a>
+            <a class="text-decoration-none " routerLink="doc.Url">{{doc.fileName}}</a>
           </div>
           <div *ngIf="doc.downloaded == true">
             {{doc.fileSize}}
