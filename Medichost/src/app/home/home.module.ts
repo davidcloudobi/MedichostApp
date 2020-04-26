@@ -27,6 +27,7 @@ import { MyScheduleComponent } from '../doctor/doctordashborad/dashboardlayout/s
 import { MyCalenderComponent } from '../doctor/doctordashborad/dashboardlayout/calender.component';
 import { HomeRouter } from './home.routes';
 import { CommonModule } from '@angular/common';
+import { UpcomingComponent } from '../dentalpatients/upcoming.component';
 
 
 @NgModule({
@@ -55,7 +56,7 @@ import { CommonModule } from '@angular/common';
     DoctorComponent,
     MyScheduleComponent,
     MyCalenderComponent,
-
+    UpcomingComponent,
     PatientnavbarComponent
   ],
   entryComponents: [DialogTemplateComponent],
@@ -63,6 +64,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     SharedModules,
     HomeRouter,
+
   ],
   providers: [DialogService, DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService],
 })

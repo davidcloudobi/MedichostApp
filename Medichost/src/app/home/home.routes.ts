@@ -10,7 +10,7 @@ import { DashboardComponentComponent } from '../doctor/doctordashborad/dashboard
 
 const routes:Routes = [
   { path: "", component: HomepageComponent },
-  { path: "doctor", component: DashboardComponentComponent, },
+  { path: "doctor", component: DoctorComponent },
   { path: "appointments", component: AppointmentsComponent },
   { path: "patients", component: PatientsComponent },
   { path: "appointment", component: AppointmentDefaultComponent },
