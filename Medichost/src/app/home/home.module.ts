@@ -17,7 +17,6 @@ import { TableComponent } from '../Appointment/appointments/table/table.componen
 import { DialogTemplateComponent } from '../Appointment/appointments/table/dialog-template/dialog-template.component';
 import { MedicoPatientsComponent } from '../Appointment/medico-patients/medico-patients.component';
 import { PatientsComponent } from '../Appointment/patients/patients.component';
-import { PatientnavbarComponent } from '../patients/patientnavbar/patientnavbar.component';
 import { SharedModules } from '../shared/widget/shared.module';
 import { DialogService } from '../Appointment/appointments/table/dialog.service';
 import { DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService } from '@syncfusion/ej2-angular-schedule';
@@ -27,6 +26,10 @@ import { MyScheduleComponent } from '../doctor/doctordashborad/dashboardlayout/s
 import { MyCalenderComponent } from '../doctor/doctordashborad/dashboardlayout/calender.component';
 import { HomeRouter } from './home.routes';
 import { CommonModule } from '@angular/common';
+import { UpcomingComponent } from '../dentalpatients/upcoming.component';
+import { PatientnavbarComponent } from '../dentalpatients/patientnavbar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PatientDetailsHeaderComponent } from '../dentalpatients/patientdetailsheader.component';
 
 
 @NgModule({
@@ -50,19 +53,21 @@ import { CommonModule } from '@angular/common';
 
     MedicoPatientsComponent,
     PatientsComponent,
-
+  
     DashboardComponentComponent,
     DoctorComponent,
     MyScheduleComponent,
     MyCalenderComponent,
-
-    PatientnavbarComponent
+    UpcomingComponent,
+  
   ],
   entryComponents: [DialogTemplateComponent],
   imports: [
     CommonModule,
     SharedModules,
     HomeRouter,
+    FontAwesomeModule,
+
   ],
   providers: [DialogService, DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService],
 })

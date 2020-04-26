@@ -1,0 +1,157 @@
+<div class="main-content" id="maintext">
+  <div>
+    <control-content></control-content>
+    <patientdetail-dashboad></patientdetail-dashboad>
+    <div class="row m-3">
+      <div class="col-sm-3">
+        <div class="card p-2">
+          <div class="mx-auto mt-5 img-margin">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+              class="card-img-top img-height rounded-circle"
+              alt="..."
+            />
+          </div>
+          <div class="card-body">
+            <p class="card-title text-center">
+              {{ Name }}
+              <small class="text-muted text-center">{{ Email }}</small>
+            </p>
+            <div class="text-center">
+              <div
+                class="card-text p-2 d-flex justify-content-center"
+                style="line-height: 0em;"
+              >
+                <div class="p-4">
+                  <p>{{ Post }}</p>
+                  <small class="text-muted">Post</small>
+                </div>
+                <div class="border-left border-secondary p-4">
+                  <p>{{ Upcoming }}</p>
+                  <small class="text-muted">Upcoming</small>
+                </div>
+              </div>
+              <a href="#" class="btn btn-secondary ml-3 mt-2">Send message</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="card">
+          <div class="card-body row patient-font" *ngIf="Patients">
+            <div class="col-sm-3 border-bottom border-secondary-2 m-3">
+              <p>Gender</p>
+              <P><b>{{ Patients.gender }}</b></P>
+            </div>
+            <div
+              class="col-sm-3 border-bottom border-secondary-2 m-3"
+            >
+              <p>Birthday</p>
+              <p><b>{{ Patients.birthday }}</b></p>
+            </div>
+            <div
+              class="col-sm-3 border-bottom border-secondary-2 m-3 "
+            >
+              <p>PhoneNumber</p>
+              <p><b>{{ Patients.phoneNumber }}</b></p>
+            </div>
+            <div
+              class="col-sm-3 border-bottom border-secondary-2 m-3 "
+            >
+              <p>Street Address</p>
+              <p><b>{{ Patients.streetAddress }}</b></p>
+            </div>
+            <div
+              class="col-sm-3 border-bottom border-secondary-2 m-3 "
+            >
+              <p>City</p>
+              <p><b>{{ Patients.city }}</b></p>
+            </div>
+            <div
+              class="col-sm-3  border-secondary-2 m-3 "
+            >
+              <p>Zip Code</p>
+              <p><b>{{ Patients.zipCode }}</b></p>
+            </div>
+            <div
+              class="col-sm-3 border-bottom border-secondary-2 m-3 "
+            >
+              <p>Member Status</p>
+              <p><b> {{ Patients.memberStatus }}</b></p>
+            </div>
+            <div
+              class="col-sm-3 border-bottom border-secondary-2 m-3 "
+            >
+              <p>Registered Date</p>
+              <p><b>{{ Patients.registeredDate }}</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        
+            <div class="card mb-3">
+                <div class=" bg-transparent d-flex justify-content-between p-2"><div>Notes</div><div><a href="#" class="text-decoration-none">see more</a></div></div>
+                <div class="card-body  notes-bg" style="margin: 0.5em;">
+                  <textarea class="card-text "></textarea>
+                  <button class="btn btn-primary">save note</button>
+                </div>
+                <span class="ml-2 patient-font">Lorem ipsum dolor, sit amet!</span>
+                <div class=" bg-transparent  d-flex justify-content-between p-2"><div>
+                    <small class="text-muted patient-font"><fa-icon  class="text-primary mr-1"  [icon]="faUser"></fa-icon>  Drg mega Nanade</small>
+                </div><div><span class="text-muted patient-font">{{Date}}</span></div></div>
+             
+        </div>
+      </div>
+    </div>
+<div class="row m-4">
+    <div class="card col-sm-8 mr-4 bg-light ">
+        <div class="mt-2">
+        <a  routerLink="/patient/details/upcoming" class="btn bg-light btn-lg btn-default appointment-header">Upcoming Appointments</a>
+        <a href="#" class="btn bg-light btn-lg btn-default appointment-header">Past Appointment</a>
+        <a href="#" class="btn  bg-light btn-lg btn-default appointment-header">Medical Record</a>
+        </div>
+        <div class="d-flex justify-content-between border rounded">
+          <div class="mt-2 ml-2">Root Canal Treatment</div>
+      
+            <div class="form-group w-25 mt-2">
+              <select 
+                  name="filter" 
+                  id="option" 
+                  class="form-control"
+                  [(ngModel)]="filter">
+                  <option *ngFor="let item of items" [value]="item"><fa-icon [icon]="faArrowUp"></fa-icon>{{ item }}</option>
+              </select>
+          </div>
+          </div>
+      
+        <div class="card-body appointment-list  ">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <div class="card col-sm-3" *ngIf="document">
+        <div class="d-flex justify-content-between file-font" >
+        <div> <h1>Files/Document</h1></div>
+         <div class="mt-2" ><a routerLink="" class="text-primary text-decoration-none" id="addfile"><fa-icon class="text-primary mr-1" [icon]="faFileUpload"></fa-icon>Add File</a> </div>
+        </div>
+        <ul class="list-group list-group-flush file-font" *ngFor="let doc of document">
+          <li  class="list-group-item d-flex justify-content-between">
+            <div>
+            <fa-icon  class=" mr-3"  [icon]="faFileAlt"></fa-icon>
+            <a class="text-decoration-none " routerLink="doc.Url">{{doc.fileName}}</a>
+          </div>
+          <div *ngIf="doc.downloaded == true">
+            {{doc.fileSize}}
+          </div>
+          <div *ngIf="doc.downloaded == false">
+            <fa-icon  class="mr-1"   [icon]="faTrash"></fa-icon>
+            <fa-icon   [icon]="faFileAlt"></fa-icon>
+          </div>
+          </li>
+         
+          
+        </ul>
+      </div>
+</div>
+  </div>
+</div>
