@@ -1,0 +1,64 @@
+.oddNumber{
+  background-color: skyblue;
+  color:blue;
+  padding: 10px
+}
+.evenNumber{
+  background-color: orange;
+  color:red;
+  padding: 10px
+}
+
+.timeVital{
+  text-align: center;
+  background-color: skyblue;
+  color: blue;
+  width: 100%;
+}
+
+.timeCheckIn{
+  text-align: center;
+  background-color: orange;
+  color: red;
+  width: 100%;
+}
+
+.patientActivity{
+  box-shadow: 5px 5px 10px rgb(118, 200, 233);
+  width: 100%;
+  border-radius: 80px;
+  background-color: aliceblue;
+}
+
+.waitingHeader{
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 100%;
+}
+
+.waitingList{
+  width: 100%;
+  margin: 0 0;
+  font-size: 100%;
+  box-shadow: none;
+  transition: box-shadow ease-in-out 0.5s;
+  transition: margin ease-in-out 0.5s;
+  transition: font-size ease-in-out 0.5s;
+}
+
+.waitingList:hover{
+  cursor: pointer;
+  margin: 3px -20px;
+  font-size: larger;
+  box-shadow: 6px 6px 12px gray;
+  transition: box-shadow ease-in-out 0.5s;
+  transition: margin ease-in-out 0.5s;
+  transition: font-size ease-in-out 0.5s;
+}
+
+.tabHeader
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

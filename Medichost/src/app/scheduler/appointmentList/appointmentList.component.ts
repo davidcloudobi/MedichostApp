@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { appointmentCard } from 'src/models/appointmentCard';
 import { ActivatedRoute } from '@angular/router';
+import { appointmentSort } from 'src/models/appointmentSorter';
 
 @Component({
   selector: 'app-appointmentList',
@@ -10,38 +11,51 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AppointmentListComponent implements OnInit {
 
-  appointmentList:appointmentCard[];
+  appointmentList: appointmentSort;
+
   constructor(private routeParam: ActivatedRoute) {  }
 
   ngOnInit()
   {
-    this.appointmentList = this.routeParam.snapshot.data.appointmentList;
-  }
-
-  timeElasped(time:appointmentCard):string{
-
-    const totalElapsed = new Date(Date.now()).getHours() * 60 + new Date(Date.now()).getMinutes();
-    const appointmentTime = time.appointmentTime.hours * 60 + time.appointmentTime.minutes;
-
-    if(appointmentTime < totalElapsed)
-    {
-      let delay = totalElapsed - appointmentTime;
-      return (delay / 60 > 0) ? (delay/60 + ":" + delay%60).padStart(2, "0")+" Hrs" : `${delay%60}`.padStart(2, "0") + "mins";
-    }
-
-    return 'Not Arrived';
-  }
-
-  patientCheck(time:appointmentCard):boolean
-  {
-    const currentTime = new Date(Date.now());
-    return (time.appointmentTime.hours * 60 + time.appointmentTime.minutes) > (currentTime.getHours() * 60 + currentTime.getMinutes());
+    this.appointmentList = this.sortAppointmentList(this.routeParam.snapshot.data.appointmentList);
   }
 
   todayDate():string
   {
     let today =  new Date(Date.now()).toString().split(" ");
     return `${today[2]} ${today[1]} ${today[3]}`;
+  }
+
+  sortAppointmentList(appointments: appointmentCard[]):appointmentSort
+  {
+    return appointments.reduce((reducer, item) =>
+    {
+      switch(item.state)
+      {
+        case 0:
+          reducer.onQueue.push(item);
+          break;
+
+        case 1:
+          reducer.onWaiting.push(item);
+          break;
+
+        case 2:
+          reducer.onPending.push(item);
+          break;
+
+        case 3:
+          reducer.onFinished.push(item);
+          break;
+
+        default:
+          break;
+      }
+
+      return reducer;
+    },
+    {onQueue:[], onWaiting:[], onPending:[], onFinished:[]});
+
   }
 
 }

@@ -29,6 +29,7 @@
     "@syncfusion/ej2-angular-lists": "^18.1.45",
     "@syncfusion/ej2-angular-navigations": "^18.1.45",
     "@syncfusion/ej2-angular-schedule": "^18.1.45",
+    "@syncfusion/ej2-layouts": "^18.1.45",
     "bootstrap": "^4.4.1",
     "highcharts": "^8.0.4",
     "highcharts-angular": "^2.4.0",

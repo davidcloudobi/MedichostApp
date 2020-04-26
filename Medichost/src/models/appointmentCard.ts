@@ -8,5 +8,6 @@ export interface appointmentCard   {
   imageURL:string,
   contact:number,
   appointmentTime: Time
+  state:number //To Specify the activity of a current Patient
 }
 
