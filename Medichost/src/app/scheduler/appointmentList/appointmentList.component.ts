@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { appointmentCard } from 'src/models/appointmentCard';
 import { ActivatedRoute } from '@angular/router';
 import { appointmentSort } from 'src/models/appointmentSorter';
+import { appointmentDoctor } from 'src/models/appointmentDoctor';
 
 @Component({
   selector: 'app-appointmentList',
@@ -12,18 +13,20 @@ import { appointmentSort } from 'src/models/appointmentSorter';
 export class AppointmentListComponent implements OnInit {
 
   appointmentList: appointmentSort;
+  currentDoctor: appointmentDoctor;
 
   constructor(private routeParam: ActivatedRoute) {  }
 
   ngOnInit()
   {
     this.appointmentList = this.sortAppointmentList(this.routeParam.snapshot.data.appointmentList);
+    this.appointmentList = this.routeParam.snapshot.data.doctorDetail;
   }
 
   todayDate():string
   {
     let today =  new Date(Date.now()).toString().split(" ");
-    return `${today[2]} ${today[1]} ${today[3]}`;
+    return `${today[2]} ${today[1]} ${today[3]}`.toUpperCase();
   }
 
   sortAppointmentList(appointments: appointmentCard[]):appointmentSort
