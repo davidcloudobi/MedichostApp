@@ -23,8 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     PatientDashBoardComponent,
     PatientnavbarComponent,
-    PatientDetailsHeaderComponent,
-   
+    PatientDetailsHeaderComponent
   ],
   imports: [
 

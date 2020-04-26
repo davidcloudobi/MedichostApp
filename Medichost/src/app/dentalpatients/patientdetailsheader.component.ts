@@ -3,7 +3,7 @@ import { faCoffee,faEdit,faBriefcase,faAngleRight,faUser,faPlusCircle,faSearch,f
 
 @Component({
     selector: "patientdetail-dashboad",
-   templateUrl: "patientdetail.component.html",
+   templateUrl: "./patientdetail.component.html",
     encapsulation: ViewEncapsulation.None
     
 })

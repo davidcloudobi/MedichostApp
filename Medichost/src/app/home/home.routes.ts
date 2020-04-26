@@ -1,6 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { PatientnavbarComponent } from '../patients/patientnavbar/patientnavbar.component';
 import { AppointmentsComponent } from '../Appointment/appointments/appointments.component';
 import { PatientsComponent } from '../Appointment/patients/patients.component';
 import { HomepageComponent } from '../Appointment/homepage/homepage.component';

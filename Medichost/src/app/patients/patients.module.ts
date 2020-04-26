@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     SharedModules,
     SchedulerRouter,
+    FontAwesomeModule 
   ],
   declarations: [ ],
   providers: [],
