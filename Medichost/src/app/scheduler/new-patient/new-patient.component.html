@@ -1,26 +1,22 @@
-<div class="container">
-  <div class="m-3 form-group">
-    <label for="firstName">First Name</label>
-    <input type="text" class="bg-light form-control" name="firstName" />
-    <span class="input-prepend">()()()</span>
-  </div>
-  <div class="m-3 form-group">
-    <label for="lastName">Last Name</label>
-    <input type="text" class="bg-light form-control" name="lastName" />
-    <span class="input-prepend">()()()</span>
-  </div>
-  <div class="m-3 form-group">
-    <label for="phoneNumber">Phone Number</label>
-    <input type="text" class="bg-light form-control" name="phoneNumber" />
-    <span class="input-prepend">()()()</span>
-  </div>
-  <div class="m-3 form-group">
-    <label for="dob">Date of birth</label>
-    <input type="date" class="bg-light form-control" name="dob" />
-    <span class="input-prepend">()()()</span>
-  </div>
-</div>
+<div class="control-section template">
 
-<div class="footer">
-  <button class="bg-light">+ Add New</button>
+  <!-- Render Button to open the Dialog -->
+  <button ejs-button id='dlgbtn' #ButtonInstance (click)="BtnClick()">Open</button>
+
+  <ejs-dialog #template [height]='height' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon'
+      [target]='target' [width]='width' (open)="dialogOpen()" (close)="dialogClose()">
+      <ng-template #footerTemplate>
+          <input id="inVal" #inVal class="e-input" type="text" placeholder="Enter your message here!" />
+          <button id="sendButton" #sendButton class="e-control e-btn e-primary sendButton" data-ripple="true">Send</button>
+      </ng-template>
+      <ng-template #content>
+          <div class="dialogContent">
+              <span #dialogText class="dialogText">Greetings Nancy! When will you share me the source files of the project?</span>
+          </div>
+      </ng-template>
+      <ng-template #header>
+          <div class="e-avatar template-image e-avatar-xsmall e-avatar-circle"></div>
+          <div id="dlg-template" title="Nancy" class="e-icon-settings"> Nancy </div>
+      </ng-template>
+  </ejs-dialog>
 </div>

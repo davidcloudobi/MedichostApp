@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { appointmentCard } from 'src/models/appointmentCard';
+import { appointmentCard, appointmentState } from 'src/models/appointmentCard';
 import { ActivatedRoute } from '@angular/router';
 import { appointmentSort } from 'src/models/appointmentSorter';
 import { appointmentDoctor } from 'src/models/appointmentDoctor';
@@ -21,7 +21,7 @@ export class AppointmentListsComponent implements OnInit {
   {
     const routeData = this.routeParam.snapshot.data;
     this.appointmentList = this.sortAppointmentList(routeData.appointmentList);
-    this.appointmentList = routeData.doctorDetail;
+    this.currentDoctor = routeData.doctorDetail;
   }
 
   sortAppointmentList(appointments: appointmentCard[]):appointmentSort
@@ -30,19 +30,19 @@ export class AppointmentListsComponent implements OnInit {
     {
       switch(item.state)
       {
-        case 0:
+        case appointmentState.onQueue:
           reducer.onQueue.push(item);
           break;
 
-        case 1:
+        case appointmentState.Waiting:
           reducer.onWaiting.push(item);
           break;
 
-        case 2:
+        case appointmentState.Pending:
           reducer.onPending.push(item);
           break;
 
-        case 3:
+        case appointmentState.Finished:
           reducer.onFinished.push(item);
           break;
 

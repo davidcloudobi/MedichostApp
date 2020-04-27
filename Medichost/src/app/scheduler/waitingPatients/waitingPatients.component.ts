@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChange } from '@angular/core';
 import { appointmentCard } from 'src/models/appointmentCard';
 import { appointmentSort } from 'src/models/appointmentSorter';
+import { SaveChanges } from '@syncfusion/ej2-angular-schedule';
 
 @Component({
   selector: 'patient-list',
@@ -14,6 +15,7 @@ export class WaitingPatientsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.appointments)
   }
 
   timeElapsed(time:appointmentCard):string{
@@ -24,10 +26,10 @@ export class WaitingPatientsComponent implements OnInit {
     if(appointmentTime < totalElapsed)
     {
       let delay = totalElapsed - appointmentTime;
+      if(delay < 60) return `${delay} mins`;
       let hours = `${Math.floor(delay / 60)}`.padStart(2, "0");
       let minutes = `${(delay % 60)}`.padStart(2, "0");
-
-      return (delay / 60 > 0) ? `${hours}:${minutes} Hrs` : `${minutes} mins`;
+      return `${hours}:${minutes} Hrs`;
     }
 
     return 'Not Arrived';
@@ -37,6 +39,7 @@ export class WaitingPatientsComponent implements OnInit {
     const current = new Date(Date.now());
     const patientTime = (time.appointmentTime.hours * 60 + time.appointmentTime.minutes);
     const totalTime = (current.getHours() * 60 + current.getMinutes());
+
     return totalTime > patientTime;
   }
 
@@ -58,6 +61,6 @@ export class WaitingPatientsComponent implements OnInit {
 
   displayPatientActivity(patient: appointmentCard):string{
     const check = this.canCheckVital(patient);
-    return check ? "<span>Check In</span>" : "<span>Vitals</span>";
+    return check ? "Check In" : "Vitals";
   }
 }

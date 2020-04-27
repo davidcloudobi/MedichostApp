@@ -11,6 +11,7 @@ import { BookAppointmentComponent } from './book-appointment/book-appointment.co
 import { SearchPatientComponent } from './search-patient/search-patient.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import { DoctorDetailResolver } from 'src/resolvers/schedule/doctorDetail.resolver';
 
 @NgModule({
   imports: [SharedModules, SchedulerRouter],
@@ -25,6 +26,6 @@ import { AppointmentListComponent } from './appointment-list/appointment-list.co
     SearchResultComponent,
     AppointmentListComponent,
   ],
-  providers: [WaitingListResolver],
+  providers: [WaitingListResolver, DoctorDetailResolver],
 })
 export class SchedulerModule {}

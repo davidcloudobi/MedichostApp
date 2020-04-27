@@ -1,34 +1,53 @@
 .oddNumber{
   background-color: skyblue;
   color:blue;
-  padding: 10px
+  padding: 10px;
+  border-radius:5px;
+  font-weight: bold;
 }
 .evenNumber{
   background-color: orange;
   color:red;
-  padding: 10px
+  padding: 10px;
+  border-radius:5px;
+  font-weight: bold;
 }
-
+.e-card{
+  display:flex;
+  align-items: center;
+}
 .timeVital{
   text-align: center;
   background-color: skyblue;
-  color: blue;
   width: 100%;
+  color: blue;
+  padding:10px 5px;
+  font-weight: bold;
+  border-radius: 8px;
 }
 
 .timeCheckIn{
   text-align: center;
   background-color: orange;
   color: red;
-  width: 100%;
+  width: 200px;
+  padding:10px 10px;
+  font-weight: bold;
+  border-radius: 8px;
 }
 
-.patientActivity{
-  box-shadow: 5px 5px 10px rgb(118, 200, 233);
-  width: 100%;
-  border-radius: 80px;
-  background-color: aliceblue;
+.vitalorCheck{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(233, 233, 223);
+  text-align: center;
+  font-weight: bold;
+  border-radius: 40px;
+  box-shadow: 3px 3px 20px skyblue;
 }
+
 
 .waitingHeader{
   text-transform: uppercase;
@@ -37,6 +56,7 @@
 }
 
 .waitingList{
+  align-items: center;
   width: 100%;
   margin: 0 0;
   font-size: 100%;
@@ -55,10 +75,21 @@
   transition: margin ease-in-out 0.5s;
   transition: font-size ease-in-out 0.5s;
 }
-
+.waitBold{
+  font-weight: bold;
+}
 .tabHeader
 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+.tabHeading
+{
+  font-weight: bold;
+  color:white;
+  background-color: blue;
+  padding: 0 40px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
 }

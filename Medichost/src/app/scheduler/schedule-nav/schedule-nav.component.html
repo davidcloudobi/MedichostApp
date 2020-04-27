@@ -11,7 +11,7 @@
           <div class="e-card">
             <div class="d-flex justify-content-around align-items-center">
               <div>
-                <i class="fa fa-user fa-5x pointer" aria-hidden="true"></i>
+                <div class="e-avatar template-image e-avatar-normal e-avatar-circle"></div>
               </div>
               <div class="d-flex flex-column font-weight-bold">
                 <span>{{doctor.name}}</span>
@@ -36,10 +36,10 @@
     <div class="offset-2 col-5">
       <div class="row">
         <div class="offset-3 col-3 pointer">
-          <span class="pillButton bg-light">Appointment</span>
+          <a [routerLink]="['/schedule/waiting']"><span class="pillButton bg-light">Appointment</span></a>
         </div>
         <div class="col-3 pointer">
-          <span class="pillButton bg-light">Walk In</span>
+          <a [routerLink]="['/schedule/create']"><span class="pillButton bg-light">Walk In</span></a>
         </div>
         <div class="col-3">
           <i class="fa fa-cog fa-4x setting pointer" aria-hidden="true"></i>
@@ -48,3 +48,5 @@
     </div>
   </div>
 </div>
+
+<!-- <app-search-result [viewResult]="true"></app-search-result> -->
