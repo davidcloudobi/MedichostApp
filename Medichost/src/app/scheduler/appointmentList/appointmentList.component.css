@@ -58,6 +58,11 @@
   font-weight: 700;
 }
 
+.tab-header
+{
+  color:blue !important;
+}
+
 
 .pillButton
 {

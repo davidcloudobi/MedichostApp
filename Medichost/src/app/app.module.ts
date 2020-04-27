@@ -1,7 +1,9 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+
+import { AppComponent } from "./app.component";
 import { AppRouter } from "./app.routes";
 import { AngularMaterialsModules } from './shared/materialsModule/material_module';
 import { MaterialModule } from './shared/material/material.module';

@@ -1,0 +1,28 @@
+<div class="control-section template">
+
+  <ejs-dialog #template [height]='height' [animationSettings]='animationSettings' [showCloseIcon]='showCloseIcon'
+      [target]='target' [width]='width' (open)="dialogOpen()" (close)="dialogClose()">
+      <ng-template #footerTemplate>
+        <div class="row d-flex justify-content-center">
+          <button id="sendButton" #sendButton class="addNewButton" data-ripple="true">+ Add New</button>
+        </div>
+      </ng-template>
+      <ng-template #content>
+          <div class="dialogContent">
+            <div class="input-group mb-3">
+              <input id="inVal" #inVal type="text" class="form-control searchField" placeholder="Enter Record ID">
+              <div class="input-group-append">
+                <span class="input-group-text prependSearch"><i class="fa fa-search "></i></span>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <i class="fa fa-search fa-5x m-5"></i>
+            </div>
+
+          </div>
+      </ng-template>
+      <ng-template #header>
+          <div id="dlg-template" title="Search Result" class="e-icon-settings"> <span class="text-black font-weight-bold">Search Result</span> </div>
+      </ng-template>
+  </ejs-dialog>
+</div>

@@ -20,12 +20,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { SidebarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
+import { SidebarModule, MenuModule, TabModule } from '@syncfusion/ej2-angular-navigations';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { MaterialModule } from 'src/app/shared/material/material.module';
 import { AngularMaterialsModules } from 'src/app/shared/materialsModule/material_module';
 import { CommonModule } from '@angular/common';
+
+
+import { DialogModule } from '@syncfusion/ej2-angular-popups';
+import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 const MODULES = [
     CommonModule,
@@ -54,7 +58,10 @@ const MODULES = [
     MatListModule,
     SidebarModule,
     MenuModule,
-    ListViewModule
+    ListViewModule,
+    TabModule,
+    RadioButtonModule,
+    DialogModule,
 ];
 
 @NgModule({

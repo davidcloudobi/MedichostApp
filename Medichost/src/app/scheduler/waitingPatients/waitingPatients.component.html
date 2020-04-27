@@ -1,0 +1,209 @@
+<ejs-tab id="element">
+  <e-tabitems>
+    <e-tabitem>
+      <ng-template #headerText>
+        <div>
+          <div class="tabHeading">
+            <div class="tabHeader">
+              <span>{{appointments.onQueue.length}}</span>
+              <span>Queue</span>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template #content>
+        <div class="mr-5 ml-5">
+          <div class="e-card">
+            <div class="row waitingHeader">
+              <div class="col-2"></div>
+              <div class="col-2">Name</div>
+              <div class="col-1">contact</div>
+              <div class="col-1">Appointment</div>
+              <div class="col-1">waited</div>
+              <div class="offset-1 col-1"></div>
+              <div class="col-1"></div>
+            </div>
+          </div>
+
+          <div class="e-card" *ngFor="let patient of appointments.onQueue">
+            <div class="row waitingList">
+              <div class="col-2 ">
+                <span [className] = "isEven(patient) ? 'evenNumber' : 'oddNumber'">{{appointments.onQueue.indexOf(patient) + 1}}</span>
+              </div>
+              <div class="col-2 d-flex justify-content-around">
+                <div class="e-avatar template-image e-avatar-normal e-avatar-circle">
+                  <img [src]="patient.imageURL" alt="">
+                </div>
+                <div class="d-flex flex-column flex-start"> <span>{{patient.name}}</span> <span>{{patient.gender}},
+                    {{patient.age}} yr</span>
+                </div>
+              </div>
+              <div class="col-1">{{patient.contact}} </div>
+              <div class="col-1">{{displayAppointmentTime(patient)}}</div>
+              <div class="col-1"><span [className]="canCheckVital(patient) ? ' timeCheckIn ' : ' timeVital '">{{timeElapsed(patient)}}</span></div>
+              <div class="offset-1 col-1 patientActivity">{{displayPatientActivity(patient)}}</div>
+              <div class="col-1 text-center"> <h1 class="font-weight-bold">...</h1> </div>
+            </div>
+          </div>
+
+        </div>
+      </ng-template>
+    </e-tabitem>
+    <e-tabitem>
+      <ng-template #headerText>
+        <div>
+          <div class="tabHeading">
+            <div class="tabHeader">
+              <span>{{appointments.onWaiting.length}}</span>
+              <span>Waiting</span>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template #content>
+        <div class="mr-5 ml-5">
+          <div class="e-card">
+            <div class="row waitingHeader" *ngIf="appointments.onWaiting.length > 0">
+              <div class="col-2"></div>
+              <div class="col-2">Name</div>
+              <div class="col-1">contact</div>
+              <div class="col-1">Appointment</div>
+              <div class="col-1">waited</div>
+              <div class="offset-1 col-1"></div>
+              <div class="col-1"></div>
+            </div>
+            <div class="p-4" *ngIf="appointments.onWaiting.length < 1">
+              <h3>No Waiting Patient Appointment at the Moment</h3>
+            </div>
+          </div>
+
+          <div class="e-card" *ngFor="let patient of appointments.onWaiting">
+            <div class="row waitingList">
+              <div class="col-2 ">
+                <span [className] = "isEven(patient) ? 'evenNumber' : 'oddNumber'">{{appointments.onQueue.indexOf(patient) + 1}}</span>
+              </div>
+              <div class="col-2 d-flex justify-content-around">
+                <div class="e-avatar template-image e-avatar-normal e-avatar-circle">
+                  <img [src]="patient.imageURL" alt="">
+                </div>
+                <div class="d-flex flex-column flex-start"> <span>{{patient.name}}</span> <span>{{patient.gender}},
+                    {{patient.age}} yr</span>
+                </div>
+              </div>
+              <div class="col-1">{{patient.contact}} </div>
+              <div class="col-1">{{displayAppointmentTime(patient)}}</div>
+              <div class="col-1"><span [className]="canCheckVital(patient) ? ' timeCheckIn ' : ' timeVital '">{{timeElapsed(patient)}}</span></div>
+              <div class="offset-1 col-1 patientActivity">{{displayPatientActivity(patient)}}</div>
+              <div class="col-1 text-center"> <h1 class="font-weight-bold">...</h1> </div>
+            </div>
+          </div>
+
+        </div>
+      </ng-template>
+    </e-tabitem>
+    <e-tabitem>
+      <ng-template #headerText>
+        <div>
+          <div class="tabHeading">
+            <div class="tabHeader">
+              <span>{{appointments.onPending.length}}</span>
+              <span>Pending</span>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template #content>
+        <div class="mr-5 ml-5">
+          <div class="e-card">
+            <div class="row waitingHeader" *ngIf="appointments.onPending.length > 0">
+              <div class="col-2"></div>
+              <div class="col-2">Name</div>
+              <div class="col-1">contact</div>
+              <div class="col-1">Appointment</div>
+              <div class="col-1">waited</div>
+              <div class="offset-1 col-1"></div>
+              <div class="col-1"></div>
+            </div>
+            <div class="p-4" *ngIf="appointments.onPending.length < 1">
+              <h3>No Pending Patient Appointment at the Moment</h3>
+            </div>
+          </div>
+
+          <div class="e-card" *ngFor="let patient of appointments.onPending">
+            <div class="row waitingList">
+              <div class="col-2 ">
+                <span [className] = "isEven(patient) ? 'evenNumber' : 'oddNumber'">{{appointments.onQueue.indexOf(patient) + 1}}</span>
+              </div>
+              <div class="col-2 d-flex justify-content-around">
+                <div class="e-avatar template-image e-avatar-normal e-avatar-circle">
+                  <img [src]="patient.imageURL" alt="">
+                </div>
+                <div class="d-flex flex-column flex-start"> <span>{{patient.name}}</span> <span>{{patient.gender}},
+                    {{patient.age}} yr</span>
+                </div>
+              </div>
+              <div class="col-1">{{patient.contact}} </div>
+              <div class="col-1">{{displayAppointmentTime(patient)}}</div>
+              <div class="col-1"><span [className]="canCheckVital(patient) ? ' timeCheckIn ' : ' timeVital '">{{timeElapsed(patient)}}</span></div>
+              <div class="offset-1 col-1 patientActivity">{{displayPatientActivity(patient)}}</div>
+              <div class="col-1 text-center"> <h1 class="font-weight-bold">...</h1> </div>
+            </div>
+          </div>
+
+        </div>
+      </ng-template>
+    </e-tabitem>
+    <e-tabitem>
+      <ng-template #headerText>
+        <div>
+          <div class="tabHeading">
+            <div class="tabHeader">
+              <span>{{appointments.onFinished.length}}</span>
+              <span>Done</span>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template #content>
+        <div class="mr-5 ml-5">
+          <div class="e-card">
+            <div class="row waitingHeader" *ngIf="appointments.onFinished.length > 0">
+              <div class="col-2"></div>
+              <div class="col-2">Name</div>
+              <div class="col-1">contact</div>
+              <div class="col-1">Appointment</div>
+              <div class="col-1">waited</div>
+              <div class="offset-1 col-1"></div>
+              <div class="col-1"></div>
+            </div>
+            <div class="p-4" *ngIf="appointments.onFinished.length < 1">
+              <h3>No Patient Attended To Today</h3>
+            </div>
+          </div>
+
+          <div class="e-card" *ngFor="let patient of appointments.onFinished">
+            <div class="row waitingList">
+              <div class="col-2 ">
+                <span [className] = "isEven(patient) ? 'evenNumber' : 'oddNumber'">{{appointments.onQueue.indexOf(patient) + 1}}</span>
+              </div>
+              <div class="col-2 d-flex justify-content-around">
+                <div class="e-avatar template-image e-avatar-normal e-avatar-circle">
+                  <img [src]="patient.imageURL" alt="">
+                </div>
+                <div class="d-flex flex-column flex-start"> <span>{{patient.name}}</span> <span>{{patient.gender}},
+                    {{patient.age}} yr</span>
+                </div>
+              </div>
+              <div class="col-1">{{patient.contact}} </div>
+              <div class="col-1">{{displayAppointmentTime(patient)}}</div>
+              <div class="col-1"><span [className]="canCheckVital(patient) ? ' timeCheckIn ' : ' timeVital '">{{timeElapsed(patient)}}</span></div>
+              <div class="offset-1 col-1 patientActivity">{{displayPatientActivity(patient)}}</div>
+              <div class="col-1 text-center"> <h1 class="font-weight-bold">...</h1> </div>
+            </div>
+          </div>
+
+        </div>
+      </ng-template>
+    </e-tabitem>
+  </e-tabitems>
+</ejs-tab>

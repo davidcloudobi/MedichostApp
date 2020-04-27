@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { appointmentCard } from 'src/models/appointmentCard';
+import { appointmentCard, appointmentState } from 'src/models/appointmentCard';
 import { ActivatedRoute } from '@angular/router';
+import { appointmentSort } from 'src/models/appointmentSorter';
+import { appointmentDoctor } from 'src/models/appointmentDoctor';
 
 @Component({
   selector: 'app-appointmentList',
@@ -8,40 +10,50 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./appointmentList.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppointmentListComponent implements OnInit {
+export class AppointmentListsComponent implements OnInit {
 
-  appointmentList:appointmentCard[];
+  appointmentList: appointmentSort;
+  currentDoctor: appointmentDoctor;
+
   constructor(private routeParam: ActivatedRoute) {  }
 
   ngOnInit()
   {
-    this.appointmentList = this.routeParam.snapshot.data.appointmentList;
+    const routeData = this.routeParam.snapshot.data;
+    this.appointmentList = this.sortAppointmentList(routeData.appointmentList);
+    this.currentDoctor = routeData.doctorDetail;
   }
 
-  timeElasped(time:appointmentCard):string{
-
-    const totalElapsed = new Date(Date.now()).getHours() * 60 + new Date(Date.now()).getMinutes();
-    const appointmentTime = time.appointmentTime.hours * 60 + time.appointmentTime.minutes;
-
-    if(appointmentTime < totalElapsed)
+  sortAppointmentList(appointments: appointmentCard[]):appointmentSort
+  {
+    return appointments.reduce((reducer, item) =>
     {
-      let delay = totalElapsed - appointmentTime;
-      return (delay / 60 > 0) ? (delay/60 + ":" + delay%60).padStart(2, "0")+" Hrs" : `${delay%60}`.padStart(2, "0") + "mins";
-    }
+      switch(item.state)
+      {
+        case appointmentState.onQueue:
+          reducer.onQueue.push(item);
+          break;
 
-    return 'Not Arrived';
-  }
+        case appointmentState.Waiting:
+          reducer.onWaiting.push(item);
+          break;
 
-  patientCheck(time:appointmentCard):boolean
-  {
-    const currentTime = new Date(Date.now());
-    return (time.appointmentTime.hours * 60 + time.appointmentTime.minutes) > (currentTime.getHours() * 60 + currentTime.getMinutes());
-  }
+        case appointmentState.Pending:
+          reducer.onPending.push(item);
+          break;
 
-  todayDate():string
-  {
-    let today =  new Date(Date.now()).toString().split(" ");
-    return `${today[2]} ${today[1]} ${today[3]}`;
+        case appointmentState.Finished:
+          reducer.onFinished.push(item);
+          break;
+
+        default:
+          break;
+      }
+
+      return reducer;
+    },
+    {onQueue:[], onWaiting:[], onPending:[], onFinished:[]});
+
   }
 
 }
