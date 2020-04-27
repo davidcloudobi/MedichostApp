@@ -19,3 +19,11 @@ const routes:Routes = [
 })
 
 export class AuthRouter { }
+
+/*
+localhost:4200/home
+              /auth/login
+              /auth/signup
+              /schedule/create
+              /schedule/waiting
+*/

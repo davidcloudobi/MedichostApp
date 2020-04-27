@@ -15,3 +15,9 @@ const routes:Routes = [
 })
 
 export class SchedulerRouter { }
+/*
+localhost:4200/home
+              /auth
+              /schedule/create
+              /schedule/waiting
+*/

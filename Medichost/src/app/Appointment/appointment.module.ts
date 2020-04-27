@@ -8,3 +8,5 @@ import { NgModule } from "@angular/core";
 })
 
 export class AppointmentModule { }
+
+// can you list all the routes of the application here?
